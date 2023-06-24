@@ -6,7 +6,7 @@ public interface IConexion {
 
     public final String USER = "root";
     public final String PASSWORD = "";
-    public final String URL = "jdbc:mysql://localhost:3306/db_veterinaria";
+    public final String URL = "jdbc:mysql://localhost:3306/db_confeccionario";
     public final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public abstract Connection getConnection();
