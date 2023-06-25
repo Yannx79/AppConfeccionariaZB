@@ -25,9 +25,7 @@ public class ProductoDAO implements IProductoDAO<ProductoDTO, Integer> {
             ps.setString(7, t.getFechaActualizacion());
             ps.setString(8, t.getFechaEliminacion());
             ps.setDouble(9, t.getDescuento());
-            if (ps.execute()) {
-                isCreated = !isCreated;
-            }
+            isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error ProductoDAO: " + e);
         } finally {
@@ -109,9 +107,7 @@ public class ProductoDAO implements IProductoDAO<ProductoDTO, Integer> {
             ps.setString(8, t.getFechaEliminacion());
             ps.setDouble(9, t.getDescuento());
             ps.setInt(10, t.getIdProducto());
-            if (ps.execute()) {
-                isUpdate = !isUpdate;
-            }
+            isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error ProductoDAO: " + e);
         } finally {
