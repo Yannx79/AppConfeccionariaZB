@@ -1,6 +1,6 @@
 
 package com.nk.models.idao;
 
-public class ICompraDAO {
+public interface ICompraDAO {
 
 }
