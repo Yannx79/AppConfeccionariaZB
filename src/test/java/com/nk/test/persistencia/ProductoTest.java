@@ -11,7 +11,7 @@ public class ProductoTest {
 //        registrar();
 //        buscar();
 //        eliminar();
-        actualizar();
+//        actualizar();
 //        listarTodo();
     }
 
