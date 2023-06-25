@@ -21,6 +21,7 @@ public class InsumoTest {
         List<InsumoDTO> listInsumo = insumoBO.listar();
         listInsumo.forEach(System.out::println);
         insumoBO.actualizar(new InsumoDTO());
+        
         insumoBO.eliminar(1);
         
     }
