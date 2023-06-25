@@ -2,7 +2,7 @@ package com.nk.models.dto;
 
 import java.io.Serializable;
 
-public class VentaDTO {
+public class VentaDTO implements Serializable{
 
     //atributos
     private int id_venta;
