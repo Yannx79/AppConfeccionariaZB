@@ -11,7 +11,7 @@ public class VentaDTO implements Serializable{
     private double total;
     private String  fecha;
     private double impuesto;
-    
+    private int estado;
     
     //constructor
 
@@ -67,8 +67,19 @@ public class VentaDTO implements Serializable{
         this.impuesto = impuesto;
     }
 
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
-        return "VentaDTO{" + "id_venta=" + id_venta + ", id_usuario=" + id_usuario + ", id_cliente=" + id_cliente + ", total=" + total + ", fecha=" + fecha + ", impuesto=" + impuesto + '}';
-    }    
+        return "VentaDTO{" + "id_venta=" + id_venta + ", id_usuario=" + id_usuario + ", id_cliente=" + id_cliente + ", total=" + total + ", fecha=" + fecha + ", impuesto=" + impuesto + ", estado=" + estado + '}';
+    }
+    
+    
+
 }

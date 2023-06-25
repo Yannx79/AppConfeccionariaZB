@@ -4,17 +4,19 @@ import com.nk.models.datasource.Conexion;
 
 public interface IVentaDAO<T, K> extends IObjectDAO<T, K> {
     
-    /*public static final String SQL_CREATE = "INSERT INTO `venta`(`id_usuario`, "
+    public static final String SQL_CREATE = "INSERT INTO `venta`(`id_usuario`, "
             + "`id_cliente`, `total`,`impuesto) VALUES "
             + "(?, ?, ?, ?)";
-    public static final String SQL_READ = "SELECT * FROM `insumo` WHERE `id_insumo` = ?";
-    public static final String SQL_READ_ALL = "SELECT * FROM `insumo` WHERE 1";
-    public static final String SQL_UPDATE = "UPDATE `insumo` SET `nombre`=?,"
-            + "`descripcion`=?,`precio`=?,`stock`=?,"
-            + "`estado`=?,`f_insercion`=?,"
-            + "`f_actualizacion`=?,`f_eliminacion`=?,"
-            + "`descuento`=? WHERE `id_insumo`=?";
-    public static final String SQL_DELETE = "UPDATE `insumo` SET `estado` = 0 "
-            + "WHERE `id_insumo`=?";
-    public static final Conexion CONEXION = Conexion.getConexion();*/
+    public static final String SQL_READ = "SELECT `id_venta`,`id_usuario`,`id_cliente`,"
+            + "`total`,DATE_FORMAT(`fecha`, '%d/%m/%Y')as `fecha`,"
+            + "`impuesto`,`estado` FROM `venta` WHERE `id_venta` = ?";
+    public static final String SQL_READ_ALL = "SELECT `id_venta`,`id_usuario`,`id_cliente`,"
+            + "`total`,DATE_FORMAT(`fecha`, '%d/%m/%Y')as `fecha`,"
+            + "`impuesto`,`estado` FROM `venta`";
+    public static final String SQL_UPDATE = "UPDATE `venta` SET `id_usuario`=?,"
+            + "`id_cliente`=?,`total`=?,`fecha`=now(),"
+            + "`impuesto`=?,`estado`=? WHERE `id_venta`=?";
+    public static final String SQL_DELETE = "UPDATE `venta` SET `estado` = 0 "
+            + "WHERE `id_venta`=?";
+    public static final Conexion CONEXION = Conexion.getConexion();
 }
