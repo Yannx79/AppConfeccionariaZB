@@ -1,4 +1,3 @@
-
 package com.nk.models.idao;
 
 import com.nk.models.datasource.Conexion;
@@ -15,7 +14,7 @@ public interface IProductoDAO<T, K> extends IObjectDAO<T, K>  {
             + "`descripcion`='?',`precio`='?',`stock`='?',"
             + "`estado`='?',`f_insercion`='?',"
             + "`f_actualizacion`='?',`f_eliminacion`='?',"
-            + "`descuento`='?' WHERE `id_insumo`='?'";
+            + "`descuento`='?' WHERE `id_producto`='?'";
     public static final String SQL_DELETE = "UPDATE `producto` SET `estado` = 0 "
             + "WHERE `id_producto`='?'";
     public static final Conexion CONEXION = Conexion.getConexion();

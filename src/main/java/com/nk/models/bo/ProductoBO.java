@@ -33,7 +33,7 @@ public class ProductoBO implements IBusinessObject<ProductoDTO, Integer> {
         return productoDAO.delete(key);
     }
 
-    public void setInsumoDAO(ProductoDAO productoDAO) {
+    public void setProductoDAO(ProductoDAO productoDAO) {
         this.productoDAO = productoDAO;
     }
     
