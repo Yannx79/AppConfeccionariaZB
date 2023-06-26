@@ -1,7 +1,9 @@
-
 package com.nk.models.dto;
 
-public class DetalleVentaDTO {
+import java.io.Serializable;
+
+public class DetalleVentaDTO implements Serializable{
+
     
     //test
     
