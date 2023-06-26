@@ -45,7 +45,6 @@ public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
                 ventaDTO.setFecha(rs.getString(5));
                 ventaDTO.setImpuesto(rs.getDouble(6));
                 ventaDTO.setEstado(rs.getInt(7));
-                
             }
         } catch (Exception e) {
             System.out.println("Error VentaDAO: " + e);
@@ -90,6 +89,7 @@ public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
             ps.setInt(1, t.getId_usuario());
             ps.setInt(2, t.getId_cliente());
             ps.setDouble(3, t.getTotal());
+          //ps.setString(4, t.getFecha());
             ps.setDouble(4, t.getImpuesto());
             ps.setInt(5, t.getEstado());
             ps.setInt(6, t.getId_venta());
