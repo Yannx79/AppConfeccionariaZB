@@ -83,12 +83,39 @@ public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
 
     @Override
     public boolean update(VentaDTO t) {
-        
+        boolean isUpdate = false;
+        Connection connection = CONEXION.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(SQL_UPDATE);
+            ps.setInt(1, t.getId_usuario());
+            ps.setInt(2, t.getId_cliente());
+            ps.setDouble(3, t.getTotal());
+            ps.setDouble(4, t.getImpuesto());
+            ps.setInt(5, t.getEstado());
+            ps.setInt(6, t.getId_venta());
+            isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
+        } catch (Exception e) {
+            System.out.println("Error VentaDAO: " + e);
+        } finally {
+            CONEXION.closeConexion();
+        }
+        return isUpdate;
     }
 
     @Override
     public boolean delete(Integer key) {
-        
-    }
+        boolean isDeleted = false;
+        Connection connection = CONEXION.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(SQL_DELETE);
+            ps.setInt(1, key);
+            isDeleted = (ps.executeUpdate() == 1) ? !isDeleted : isDeleted;
+        } catch (Exception e) {
+            System.out.println("Error VentaDAO: " + e);
+        } finally {
+            CONEXION.closeConexion();
+        }
+        return isDeleted;
+   }
 
 }
