@@ -5,7 +5,7 @@ import com.nk.models.datasource.Conexion;
 public interface IVentaDAO<T, K> extends IObjectDAO<T, K> {
     
     public static final String SQL_CREATE = "INSERT INTO `venta`(`id_usuario`, "
-            + "`id_cliente`, `total`,`impuesto) VALUES "
+            + "`id_cliente`, `total`,`impuesto`) VALUES "
             + "(?, ?, ?, ?)";
     public static final String SQL_READ = "SELECT `id_venta`,`id_usuario`,`id_cliente`,"
             + "`total`,DATE_FORMAT(`fecha`, '%d/%m/%Y')as `fecha`,"
