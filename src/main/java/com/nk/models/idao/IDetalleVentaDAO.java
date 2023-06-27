@@ -2,7 +2,7 @@ package com.nk.models.idao;
 
 import com.nk.models.datasource.Conexion;
 
-public interface IDetalleVentaDAO <T, K> extends IObjectDAO<T, K>  {
+public interface IDetalleVentaDAO{
 
     public static final String SQL_CREATE = "INSERT INTO `detalle_venta` (`id_producto`,"
             + "`id_venta`,`subtotal`,`cantidad`) VALUES (?,?,?,?)";

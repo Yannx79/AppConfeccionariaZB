@@ -9,9 +9,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Integer>{
+public class DetalleVentaDAO implements IDetalleVentaDAO{
 
-    @Override
+
     public boolean create(DetalleVentaDTO t) {
         boolean isCreated = false;
         try {
@@ -30,13 +30,13 @@ public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Intege
         return isCreated;
     }
 
-    @Override
-    public DetalleVentaDTO read(Integer key) {
+    public DetalleVentaDTO read(int key, int key2) {
         DetalleVentaDTO ventaDTO = new DetalleVentaDTO();
         Connection connection = CONEXION.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_READ);
             ps.setInt(1, key);
+            ps.setInt(2, key2);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 ventaDTO.setId_producto(rs.getInt(1));
@@ -53,7 +53,6 @@ public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Intege
         return ventaDTO;
     }
 
-    @Override
     public List<DetalleVentaDTO> readAll() {
         List<DetalleVentaDTO> list = new LinkedList<>();
         Connection connection = CONEXION.getConnection();
@@ -77,18 +76,17 @@ public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Intege
         return list;
     }
 
-    @Override
+
     public boolean update(DetalleVentaDTO t) {
         boolean isUpdate = false;
         Connection connection = CONEXION.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_UPDATE);
-            ps.setInt(1, t.getId_usuario());
-            ps.setInt(2, t.getId_cliente());
-            ps.setDouble(3, t.getTotal());
-            ps.setDouble(4, t.getImpuesto());
-            ps.setInt(5, t.getEstado());
-            ps.setInt(6, t.getId_venta());
+            ps.setDouble(1, t.getSubtotal());
+            ps.setInt(2, t.getCantidad());
+            ps.setInt(3, t.getEstado());
+            ps.setInt(4, t.getId_producto());
+            ps.setInt(5, t.getId_venta());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error DetalleVentaDAO: " + e);
@@ -98,13 +96,14 @@ public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Intege
         return isUpdate;
     }
 
-    @Override
-    public boolean delete(Integer key) {
+
+    public boolean delete(int key, int key2) {
         boolean isDeleted = false;
         Connection connection = CONEXION.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_DELETE);
             ps.setInt(1, key);
+            ps.setInt(2, key2);
             isDeleted = (ps.executeUpdate() == 1) ? !isDeleted : isDeleted;
         } catch (Exception e) {
             System.out.println("Error DetalleVentaDAO: " + e);
