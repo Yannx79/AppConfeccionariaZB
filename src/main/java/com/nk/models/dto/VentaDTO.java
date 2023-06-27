@@ -13,12 +13,11 @@ public class VentaDTO implements Serializable{
     private double impuesto;
     private int estado;
     
-    //constructor
-
+    //Constructor
     public VentaDTO() {
     }
     
-    //getters y setters
+    //Getters y setters
     public int getId_venta() {
         return id_venta;
     }
