@@ -29,5 +29,10 @@ public class DetalleVentaBO{
         return detalleventaDAO.delete(key, key2);
     }
 
+    public void setDetalleventaDAO(DetalleVentaDAO detalleventaDAO) {
+        this.detalleventaDAO = detalleventaDAO;
+    }   
+    
+
 
 }
