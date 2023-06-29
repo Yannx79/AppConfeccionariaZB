@@ -41,9 +41,7 @@ public class ProveedorTest {
         ProveedorBO proveedorBO = new ProveedorBO();
         ProveedorDAO proveedorDAO = new ProveedorDAO();
         proveedorBO.setProveedorDAO(proveedorDAO);
-
         System.out.println(proveedorBO.buscar(1));
-
     }
  private static void eliminar() {
         ProveedorBO proveedorBO = new ProveedorBO();

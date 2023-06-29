@@ -3,7 +3,7 @@ package com.nk.models.idao;
 
 import com.nk.models.datasource.Conexion;
 public interface IClienteDAO <T, K> extends IObjectDAO<T, K>{
- public static final String SQL_CREATE = "INSERT INTO `cliente`(`nombres`, "
+ public static final String SQL_CREATE = "INSERT INTO `cliente` (`nombres`, "
             + "`ap_paterno `, `ap_materno `, `dni`, `telefono`, `f_insercion `, "
             + "`f_actualizacion `, `f_eliminacion `, `estado `) VALUES "
             + "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
