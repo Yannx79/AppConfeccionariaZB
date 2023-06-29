@@ -8,7 +8,7 @@ import com.nk.models.dto.UsuarioDTO;
 public class UsuarioTest {
 
     public static void main(String[] args) {
-//        registrar();
+        registrar();
 //        buscar();
 //        eliminar();
 //        actualizar();
