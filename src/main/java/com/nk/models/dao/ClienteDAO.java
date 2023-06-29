@@ -28,7 +28,7 @@ public class ClienteDAO implements IClienteDAO<ClienteDTO, Integer> {
             ps.setDouble(9, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
-            System.out.println("Error InsumoDAO: " + e);
+            System.out.println("Error ClienteDAO: " + e);
         } finally {
             CONEXION.closeConexion();
         }

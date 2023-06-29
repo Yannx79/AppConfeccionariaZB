@@ -1,4 +1,3 @@
-
 package com.nk.models.dao;
 
 import com.nk.models.dto.UsuarioDTO;
@@ -10,7 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
- @Override
+
+    @Override
     public boolean create(UsuarioDTO t) {
         boolean isCreated = false;
         try {
@@ -21,7 +21,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
             ps.setString(3, t.getApMaterno());
             ps.setString(4, t.getUsuario());
             ps.setString(5, t.getPass());
-            
+
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error UsuarioDAO: " + e);
@@ -30,6 +30,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         }
         return isCreated;
     }
+
     @Override
     public UsuarioDTO read(Integer key) {
         UsuarioDTO usuarioDTO = new UsuarioDTO();
@@ -54,7 +55,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         }
         return usuarioDTO;
     }
-    
+
     @Override
     public List<UsuarioDTO> readAll() {
         List<UsuarioDTO> list = new LinkedList<>();
@@ -62,7 +63,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_READ_ALL);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 UsuarioDTO usuarioDTO = new UsuarioDTO();
                 usuarioDTO.setIdUsuario(rs.getInt(1));
                 usuarioDTO.setNombres(rs.getString(2));
@@ -80,7 +81,8 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         }
         return list;
     }
-@Override
+
+    @Override
     public boolean update(UsuarioDTO t) {
         boolean isUpdate = false;
         Connection connection = CONEXION.getConnection();
@@ -100,6 +102,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         }
         return isUpdate;
     }
+
     @Override
     public boolean delete(Integer key) {
         boolean isDeleted = false;
