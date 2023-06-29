@@ -136,21 +136,18 @@ public class VLogin extends javax.swing.JInternalFrame {
         rbAdministrador.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         rbAdministrador.setForeground(new java.awt.Color(250, 250, 250));
         rbAdministrador.setText("Administrador");
-        rbAdministrador.setOpaque(false);
         jPanel2.add(rbAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 120, -1));
 
         bgUser.add(rbCliente);
         rbCliente.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         rbCliente.setForeground(new java.awt.Color(250, 250, 250));
         rbCliente.setText("Cliente");
-        rbCliente.setOpaque(false);
         jPanel2.add(rbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 90, -1));
 
         bgUser.add(rbEmpleado);
         rbEmpleado.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         rbEmpleado.setForeground(new java.awt.Color(250, 250, 250));
         rbEmpleado.setText("Empleado");
-        rbEmpleado.setOpaque(false);
         rbEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbEmpleadoActionPerformed(evt);
