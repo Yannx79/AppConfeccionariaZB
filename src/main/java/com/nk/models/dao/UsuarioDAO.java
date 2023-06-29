@@ -52,7 +52,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
         } finally {
             CONEXION.closeConexion();
         }
-        return insumoDTO;
+        return usuarioDTO;
     }
     
     @Override

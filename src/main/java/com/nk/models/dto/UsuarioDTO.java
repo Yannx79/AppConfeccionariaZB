@@ -1,23 +1,22 @@
-
 package com.nk.models.dto;
+
 import java.io.Serializable;
-public class UsuarioDTO implements Serializable{
+
+public class UsuarioDTO implements Serializable {
 
 // attributes
-    private int idUsuario ;
-    private String nombres ;
-    private String apPaterno ;
-    private String apMaterno ;
-    private String usuario ;
-    private String pass ;
-    
-    
+    private int idUsuario;
+    private String nombres;
+    private String apPaterno;
+    private String apMaterno;
+    private String usuario;
+    private String pass;
+
     // constructor
     public UsuarioDTO() {
     }
-    
-    //getters and setters
 
+    //getters and setters
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -65,8 +64,10 @@ public class UsuarioDTO implements Serializable{
     public void setPass(String pass) {
         this.pass = pass;
     }
-     @Override
+
+    @Override
     public String toString() {
-        return "UsuarioDTO{" + "idUsuario  =" + idUsuario   + ", nombres=" + nombres + ", ap_paterno=" + ap_paterno + ", ap_materno=" + ap_materno + ", usuario =" + usuario  + ", pass =" + pass  + '}';
-    }  
+        return "UsuarioDTO{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", usuario=" + usuario + ", pass=" + pass + '}';
+    }
+
 }

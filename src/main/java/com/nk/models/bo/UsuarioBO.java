@@ -1,14 +1,13 @@
-
 package com.nk.models.bo;
 
 import com.nk.models.dao.UsuarioDAO;
 import com.nk.models.dto.UsuarioDTO;
 import java.util.List;
 
-public class UsuarioBO IBusinessObject<UsuarioDTO, Integer>{
+public class UsuarioBO implements IBusinessObject<UsuarioDTO, Integer> {
 
- private UsuarioDAO iusuarioDAO;
-    
+    private UsuarioDAO usuarioDAO;
+
     @Override
     public boolean registrar(UsuarioDTO t) {
         return usuarioDAO.create(t);
@@ -37,7 +36,5 @@ public class UsuarioBO IBusinessObject<UsuarioDTO, Integer>{
     public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
         this.usuarioDAO = usuarioDAO;
     }
-    
-    
-    
+
 }

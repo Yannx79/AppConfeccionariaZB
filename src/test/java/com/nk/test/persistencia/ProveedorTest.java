@@ -1,10 +1,10 @@
 
 package com.nk.test.persistencia;
 
-import com.nk.models.bo.InsumoBO;
-import com.nk.models.dao.InsumoDAO;
+import com.nk.models.bo.ProveedorBO;
+import com.nk.models.dao.ProveedorDAO;
 import com.nk.models.datasource.Conexion;
-import com.nk.models.dto.InsumoDTO;
+import com.nk.models.dto.ProveedorDTO;
 
 public class ProveedorTest {
    public static void main(String[] args) {

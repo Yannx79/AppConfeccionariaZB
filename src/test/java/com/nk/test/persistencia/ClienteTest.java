@@ -1,10 +1,10 @@
 
 package com.nk.test.persistencia;
 
-import com.nk.models.bo.InsumoBO;
-import com.nk.models.dao.InsumoDAO;
+import com.nk.models.bo.ClienteBO;
+import com.nk.models.dao.ClienteDAO;
 import com.nk.models.datasource.Conexion;
-import com.nk.models.dto.InsumoDTO;
+import com.nk.models.dto.ClienteDTO;
 
 public class ClienteTest {
   public static void main(String[] args) {
@@ -76,7 +76,7 @@ private static void registrar() {
    private static void listarTodo() {
         ClienteBO clienteBO = new ClienteBO();
         ClienteDAO clienteDAO = new ClienteDAO();
-        clienteBO.setClienteDAO(insumoDAO);
+        clienteBO.setClienteDAO(clienteDAO);
         clienteBO.listar().forEach(System.out::println);
     }
   

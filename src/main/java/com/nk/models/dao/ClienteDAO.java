@@ -9,18 +9,19 @@ import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ClienteDAO IClienteDAO<ClienteDTO, Integer>{
-@Override
-        public boolean create(ClienteDTO t) {
-boolean isCreated = false;
-try {
- Connection connection = CONEXION.getConnection();
- PreparedStatement ps = connection.prepareStatement(SQL_CREATE);
+public class ClienteDAO implements IClienteDAO<ClienteDTO, Integer> {
+
+    @Override
+    public boolean create(ClienteDTO t) {
+        boolean isCreated = false;
+        try {
+            Connection connection = CONEXION.getConnection();
+            PreparedStatement ps = connection.prepareStatement(SQL_CREATE);
             ps.setString(1, t.getNombres());
             ps.setString(2, t.getApPaterno());
-            ps.setDouble(3, t.getApMaterno());
-            ps.setInt(4, t.getDni());
-            ps.setInt(5, t.getTelefono());
+            ps.setString(3, t.getApMaterno());
+            ps.setString(4, t.getDni());
+            ps.setString(5, t.getTelefono());
             ps.setString(6, t.getfInsercion());
             ps.setString(7, t.getfActualizacion());
             ps.setString(8, t.getfEliminacion());
@@ -33,7 +34,8 @@ try {
         }
         return isCreated;
     }
- @Override
+
+    @Override
     public ClienteDTO read(Integer key) {
         ClienteDTO clienteDTO = new ClienteDTO();
         Connection connection = CONEXION.getConnection();
@@ -53,21 +55,22 @@ try {
                 clienteDTO.setfEliminacion(rs.getString(9));
                 clienteDTO.setEstado(rs.getInt(10));
             }
-} catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Error ClienteDAO: " + e);
         } finally {
             CONEXION.closeConexion();
         }
         return clienteDTO;
-    
-@Override
+    }
+
+    @Override
     public List<ClienteDTO> readAll() {
         List<ClienteDTO> list = new LinkedList<>();
         Connection connection = CONEXION.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_READ_ALL);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 ClienteDTO clienteDTO = new ClienteDTO();
                 clienteDTO.setIdCliente(rs.getInt(1));
                 clienteDTO.setNombres(rs.getString(2));
@@ -88,7 +91,8 @@ try {
         }
         return list;
     }
-@Override
+
+    @Override
     public boolean update(ClienteDTO t) {
         boolean isUpdate = false;
         Connection connection = CONEXION.getConnection();
@@ -102,7 +106,7 @@ try {
             ps.setString(6, t.getfInsercion());
             ps.setString(7, t.getfActualizacion());
             ps.setString(8, t.getfEliminacion());
-            ps.setString(9, t.getEstado());
+            ps.setInt(9, t.getEstado());
             ps.setInt(10, t.getIdCliente());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
@@ -113,7 +117,7 @@ try {
         return isUpdate;
     }
 
-@Override
+    @Override
     public boolean delete(Integer key) {
         boolean isDeleted = false;
         Connection connection = CONEXION.getConnection();

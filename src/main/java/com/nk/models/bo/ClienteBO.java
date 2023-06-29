@@ -1,13 +1,13 @@
-
 package com.nk.models.bo;
 
 import com.nk.models.dao.ClienteDAO;
 import com.nk.models.dto.ClienteDTO;
 import java.util.List;
 
-public class ClienteBO IBusinessObject<ClienteDTO, Integer>{
- private ClienteDAO clienteDAO;
-    
+public class ClienteBO implements IBusinessObject<ClienteDTO, Integer> {
+
+    private ClienteDAO clienteDAO;
+
     @Override
     public boolean registrar(ClienteDTO t) {
         return clienteDAO.create(t);
@@ -36,7 +36,5 @@ public class ClienteBO IBusinessObject<ClienteDTO, Integer>{
     public void setClienteDAO(ClienteDAO clienteDAO) {
         this.clienteDAO = clienteDAO;
     }
-    
-    
-    
+
 }

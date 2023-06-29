@@ -1,6 +1,6 @@
 package com.nk.models.dto;
 
-import java.io.serializable;
+import java.io.Serializable;
 
 public class ClienteDTO implements Serializable {
 
