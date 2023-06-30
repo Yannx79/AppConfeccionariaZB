@@ -8,11 +8,11 @@ import com.nk.models.dto.UsuarioDTO;
 public class UsuarioTest {
 
     public static void main(String[] args) {
-        registrar();
-//        buscar();
+//        registrar();
+//        buscar(); // funciona
 //        eliminar();
 //        actualizar();
-//        listarTodo();
+//        listarTodo(); // funciona
     }
 
     private static void validarConexion() {

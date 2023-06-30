@@ -46,7 +46,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
                 usuarioDTO.setApMaterno(rs.getString(4));
                 usuarioDTO.setUsuario(rs.getString(5));
                 usuarioDTO.setPass(rs.getString(6));
-
+                usuarioDTO.setIdCargo(rs.getInt(7));
             }
         } catch (Exception e) {
             System.out.println("Error UsuarioDAO: " + e);
@@ -71,7 +71,7 @@ public class UsuarioDAO implements IUsuarioDAO<UsuarioDTO, Integer> {
                 usuarioDTO.setApMaterno(rs.getString(4));
                 usuarioDTO.setUsuario(rs.getString(5));
                 usuarioDTO.setPass(rs.getString(6));
-
+                usuarioDTO.setIdCargo(rs.getInt(7));
                 list.add(usuarioDTO);
             }
         } catch (Exception e) {
