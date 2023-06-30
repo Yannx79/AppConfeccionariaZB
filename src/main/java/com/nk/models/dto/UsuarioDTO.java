@@ -11,12 +11,21 @@ public class UsuarioDTO implements Serializable {
     private String apMaterno;
     private String usuario;
     private String pass;
+    private int idCargo;
 
     // constructor
     public UsuarioDTO() {
     }
 
     //getters and setters
+    public int getIdCargo() {
+        return idCargo;
+    }
+
+    public void setIdCargo(int idCargo) {
+        this.idCargo = idCargo;
+    }
+
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -67,7 +76,7 @@ public class UsuarioDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "UsuarioDTO{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", usuario=" + usuario + ", pass=" + pass + '}';
+        return "UsuarioDTO{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", usuario=" + usuario + ", pass=" + pass + ", idCargo=" + idCargo + '}';
     }
 
 }
