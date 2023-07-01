@@ -55,8 +55,8 @@ public class CAbastecer implements ActionListener{
         return modelo;
     }
     
-    public void Mensaje (String men){
-        JOptionPane.showMessageDialog(null, men);
+    public void Mensaje (String m){
+        JOptionPane.showMessageDialog(null, m);
     }
     
     public void Registrar(InsumoDTO dto, InsumoBO bo){
