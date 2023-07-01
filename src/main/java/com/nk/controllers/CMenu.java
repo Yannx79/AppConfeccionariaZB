@@ -3,8 +3,11 @@ package com.nk.controllers;
 import com.nk.models.dto.ClienteDTO;
 import com.nk.models.dto.UsuarioDTO;
 import com.nk.models.utilities.Desktop;
+//vistas
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
+import com.nk.views.VAbastecer;
+//Manejo de frame de forma externa
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -82,7 +85,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedAbastecer() {
-
+        VAbastecer vAbastecer = new VAbastecer();
+        CAbastecer cAbastecer = new CAbastecer(vAbastecer);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vAbastecer);
     }
 
     private void actionPerformedLogin() {
