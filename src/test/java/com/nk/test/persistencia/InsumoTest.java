@@ -1,10 +1,9 @@
 package com.nk.test.persistencia;
 
-/* Importaciones para pruebas básicas
 import com.nk.models.bo.InsumoBO;
 import com.nk.models.dao.InsumoDAO;
 import com.nk.models.datasource.Conexion;
-import com.nk.models.dto.InsumoDTO;*/
+import com.nk.models.dto.InsumoDTO;
 
 //Importaciones para prueba con frame
 import com.nk.controllers.CAbastecer;
@@ -20,7 +19,7 @@ public class InsumoTest {
 //        listarTodo();
     }
 
-/*  Pruebas básicas  
+
     private static void validarConexion() {
         Conexion conexion = Conexion.getConexion();
     }
@@ -88,6 +87,6 @@ public class InsumoTest {
         InsumoDAO insumoDAO = new InsumoDAO();
         insumoBO.setInsumoDAO(insumoDAO);
         insumoBO.listar().forEach(System.out::println);
-    }*/
+    }
 
 }
