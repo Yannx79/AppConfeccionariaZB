@@ -21,10 +21,7 @@ public class InsumoDAO implements IInsumoDAO<InsumoDTO, Integer> {
             ps.setDouble(3, t.getPrecio());
             ps.setInt(4, t.getStock());
             ps.setInt(5, t.getEstado());
-            ps.setString(6, t.getFechaInserccion());
-            ps.setString(7, t.getFechaActualizacion());
-            ps.setString(8, t.getFechaEliminacion());
-            ps.setDouble(9, t.getDescuento());
+            ps.setDouble(6, t.getDescuento());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error InsumoDAO: " + e);

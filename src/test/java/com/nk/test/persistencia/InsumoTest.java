@@ -5,6 +5,10 @@ import com.nk.models.dao.InsumoDAO;
 import com.nk.models.datasource.Conexion;
 import com.nk.models.dto.InsumoDTO;
 
+//Importaciones para prueba con frame
+import com.nk.controllers.CAbastecer;
+import com.nk.views.VAbastecer;
+
 public class InsumoTest {
 
     public static void main(String[] args) {
@@ -14,6 +18,7 @@ public class InsumoTest {
 //        actualizar();
 //        listarTodo();
     }
+
 
     private static void validarConexion() {
         Conexion conexion = Conexion.getConexion();
