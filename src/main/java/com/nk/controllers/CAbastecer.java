@@ -34,7 +34,7 @@ public class CAbastecer implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == frame.btnRegistrar){
             insDTO = new InsumoDTO();
-            Registrar(insDTO,insBO);
+            RegistrarInsumo(insDTO,insBO);
         }
     }
     
@@ -59,7 +59,7 @@ public class CAbastecer implements ActionListener{
         JOptionPane.showMessageDialog(null, m);
     }
     
-    public void Registrar(InsumoDTO dto, InsumoBO bo){
+    public void RegistrarInsumo(InsumoDTO dto, InsumoBO bo){
         dto.setNombre(frame.txtNombre.getText());
         dto.setDescripcion(frame.txtDescripcion.getText());
         dto.setPrecio(Double.parseDouble(frame.txtPrecio.getText()));
