@@ -55,6 +55,7 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         tblListaInsumos = new javax.swing.JTable();
         lblTítuloListaInsumos = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(88, 101, 242));
@@ -236,12 +237,12 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaInsumos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 580, 430));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 580, 430));
 
         lblTítuloListaInsumos.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         lblTítuloListaInsumos.setForeground(new java.awt.Color(255, 255, 255));
         lblTítuloListaInsumos.setText("LISTA DE INSUMOS");
-        jPanel1.add(lblTítuloListaInsumos, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, -1, -1));
+        jPanel1.add(lblTítuloListaInsumos, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
