@@ -281,7 +281,7 @@ public class VAbastecer extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblStock;
     private javax.swing.JLabel lblTítuloListaInsumos;
     private javax.swing.JLabel lblTítuloNewInsumo;
-    private javax.swing.JTable tblListaInsumos;
+    public javax.swing.JTable tblListaInsumos;
     public javax.swing.JTextField txtDescripcion;
     public javax.swing.JTextField txtDescuento;
     public javax.swing.JTextField txtNombre;
