@@ -3,6 +3,7 @@ package com.nk.controllers;
 import com.nk.views.VAbastecer;
 import com.nk.models.dto.InsumoDTO;
 import com.nk.models.bo.InsumoBO;
+import com.nk.models.dao.InsumoDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -16,6 +17,7 @@ public class CAbastecer implements ActionListener{
     //Clase de tabla
     InsumoDTO insDTO;
     InsumoBO insBO;
+    InsumoDAO insDAO;
     //Lista de la clase
     List<InsumoDTO> L_insumos = null;
     //Modelo de tabla
@@ -66,6 +68,8 @@ public class CAbastecer implements ActionListener{
         dto.setStock(Integer.parseInt(frame.txtStock.getText()));
         dto.setEstado(1);
         dto.setDescuento(Double.parseDouble(frame.txtDescuento.getText()));
+        insDAO = new InsumoDAO();
+        bo.setInsumoDAO(insDAO);
         bo.registrar(insDTO);  
         Mensaje("Insumo registrado");
     }
