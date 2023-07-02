@@ -92,7 +92,7 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedLogout() {
-
+        actionPerformedLogin();
     }
 
 }
