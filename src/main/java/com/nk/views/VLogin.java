@@ -41,9 +41,6 @@ public class VLogin extends javax.swing.JInternalFrame {
         lblUser = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        rbAdministrador = new javax.swing.JRadioButton();
-        rbCliente = new javax.swing.JRadioButton();
-        rbEmpleado = new javax.swing.JRadioButton();
         btnLogin = new javax.swing.JButton();
 
         setClosable(true);
@@ -54,7 +51,8 @@ public class VLogin extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBannerLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(lblBannerLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 322, 250));
+        lblBannerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nk/img/logo-principal-login.jpg"))); // NOI18N
+        jPanel1.add(lblBannerLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 340, 400));
 
         lblLogoCentro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblLogoCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 278, 241));
@@ -99,7 +97,7 @@ public class VLogin extends javax.swing.JInternalFrame {
         btnRegistrar.setOpaque(true);
         btnRegistrar.setRequestFocusEnabled(false);
         btnRegistrar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, 210, 60));
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 210, 60));
 
         txtEmail.setBackground(new java.awt.Color(33, 45, 62));
         txtEmail.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
@@ -132,29 +130,6 @@ public class VLogin extends javax.swing.JInternalFrame {
         jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 160, -1));
 
-        bgUser.add(rbAdministrador);
-        rbAdministrador.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        rbAdministrador.setForeground(new java.awt.Color(250, 250, 250));
-        rbAdministrador.setText("Administrador");
-        jPanel2.add(rbAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 120, -1));
-
-        bgUser.add(rbCliente);
-        rbCliente.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        rbCliente.setForeground(new java.awt.Color(250, 250, 250));
-        rbCliente.setText("Cliente");
-        jPanel2.add(rbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 90, -1));
-
-        bgUser.add(rbEmpleado);
-        rbEmpleado.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        rbEmpleado.setForeground(new java.awt.Color(250, 250, 250));
-        rbEmpleado.setText("Empleado");
-        rbEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(rbEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 90, -1));
-
         btnLogin.setBackground(new java.awt.Color(33, 45, 62));
         btnLogin.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,16 +142,12 @@ public class VLogin extends javax.swing.JInternalFrame {
         btnLogin.setOpaque(true);
         btnLogin.setRequestFocusEnabled(false);
         btnLogin.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 210, 60));
+        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 210, 60));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 400, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void rbEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,9 +172,6 @@ public class VLogin extends javax.swing.JInternalFrame {
     public javax.swing.JLabel lblPassword;
     public javax.swing.JLabel lblTitulo;
     public javax.swing.JLabel lblUser;
-    public javax.swing.JRadioButton rbAdministrador;
-    public javax.swing.JRadioButton rbCliente;
-    public javax.swing.JRadioButton rbEmpleado;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
