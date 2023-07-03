@@ -58,10 +58,13 @@ public class CAbastecer implements ActionListener{
         }
         if(e.getSource() == frame.btnActualizar){
             insDTO = new InsumoDTO();
-            Actualizar(insDTO,insBO);
+            Actualizar(insDTO,insBO,codInsumo);
             if(frame.tblListaInsumos.getRowCount() != 0){
                 Listar(insDTO,insBO);
             }
+            DesactivarUPDEL(frame);
+            LimpiarEntradas(frame);
+            codInsumo =0;
         }
     }
     
@@ -102,6 +105,14 @@ public class CAbastecer implements ActionListener{
         vista.btnEliminar.setEnabled(true);
         vista.btnConsultar.setEnabled(false);
         vista.btnListar.setEnabled(false);
+    }
+    
+    public void DesactivarUPDEL(VAbastecer vista){
+        vista.btnRegistrar.setEnabled(true);
+        vista.btnActualizar.setEnabled(false);
+        vista.btnEliminar.setEnabled(false);
+        vista.btnConsultar.setEnabled(true);
+        vista.btnListar.setEnabled(true);
     }
     
     //Métodos de botones
@@ -146,9 +157,10 @@ public class CAbastecer implements ActionListener{
         } 
     }
     
-    public void Actualizar(InsumoDTO dto, InsumoBO bo){
+    public void Actualizar(InsumoDTO dto, InsumoBO bo,int codIns){
         insDAO = new InsumoDAO(); 
         bo.setInsumoDAO(insDAO);
+        dto.setIdInsumo(codIns);
         dto.setNombre(frame.txtNombre.getText());
         dto.setDescripcion(frame.txtDescripcion.getText());
         dto.setPrecio(Double.parseDouble(frame.txtPrecio.getText()));
