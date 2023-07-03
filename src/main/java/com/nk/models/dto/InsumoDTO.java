@@ -105,5 +105,12 @@ public class InsumoDTO implements Serializable {
     public String toString() {
         return "InsumoDTO{" + "idInsumo=" + idInsumo + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock + ", estado=" + estado + ", fechaInserccion=" + fechaInserccion + ", fechaActualizacion=" + fechaActualizacion + ", fechaEliminacion=" + fechaEliminacion + ", descuento=" + descuento + '}';
     }
+    
+    public Object[] Registro(){
+     Object[] fila = {idInsumo,nombre,descripcion,precio,stock,estado,
+                     fechaInserccion,fechaActualizacion,fechaEliminacion,
+                     descuento};
+     return fila;
+    }           
 
 }

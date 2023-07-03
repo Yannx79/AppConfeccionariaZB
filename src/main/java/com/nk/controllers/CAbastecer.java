@@ -40,11 +40,18 @@ public class CAbastecer implements ActionListener{
             insDTO = new InsumoDTO();
             RegistrarInsumo(insDTO,insBO);
             LimpiarEntradas(frame);
+            if(frame.tblListaInsumos.getRowCount() != 0){
+                Listar(insDTO,insBO);
+            }
         }
         if(e.getSource() == frame.btnConsultar){
             insDTO = new InsumoDTO();
             ConsultarInsumo(insDTO,insBO);
             ActivarUPDEL(frame);
+        }
+        if(e.getSource() == frame.btnListar){
+            insDTO = new InsumoDTO();
+            Listar(insDTO,insBO);
         }
     }
     
@@ -110,6 +117,20 @@ public class CAbastecer implements ActionListener{
         frame.txtPrecio.setText(String.valueOf(dto.getPrecio()));
         frame.txtStock.setText(String.valueOf(dto.getStock()));
         frame.txtDescuento.setText(String.valueOf(dto.getDescuento()));
+    }
+    
+    public void Listar(InsumoDTO dto, InsumoBO bo){
+        if(frame.tblListaInsumos.getRowCount() != 0){
+        for(int i=frame.tblListaInsumos.getRowCount()-1;i>=0;i--){
+            modelo.removeRow(i);
+            }
+        }
+        insDAO = new InsumoDAO();
+        bo.setInsumoDAO(insDAO);
+        L_insumos = bo.listar();
+        for(int i=0;i<L_insumos.size();i++){
+                 modelo.addRow(L_insumos.get(i).Registro());
+        } 
     }
     
 
