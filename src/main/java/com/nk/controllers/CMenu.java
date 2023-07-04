@@ -7,6 +7,7 @@ import com.nk.models.utilities.Desktop;
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
 import com.nk.views.VAbastecer;
+import com.nk.views.VVenta;
 //Manejo de frame de forma externa
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,15 +32,15 @@ public class CMenu implements ActionListener {
     public void inicializarObjetos() {
         usuarioDTO = new UsuarioDTO();
     }
-    
+
     public void builder() {
         this.inicializarObjetos();
         this.addAllListener();
         this.construirVista();
         this.actionPerformedLogin();
     }
-    
-    public void addAllListener() { 
+
+    public void addAllListener() {
         this.vista.jmiAbastecer.addActionListener(this);
         this.vista.jmiCliente.addActionListener(this);
         this.vista.jmiMovimientosInternos.addActionListener(this);
@@ -48,7 +49,7 @@ public class CMenu implements ActionListener {
         this.vista.miLogin.addActionListener(this);
         this.vista.miLogout.addActionListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.jmiVenta) {
@@ -69,7 +70,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedVenta() {
-
+        VVenta vVenta = new VVenta();
+        CVenta cVenta = new CVenta(vVenta);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vVenta);
     }
 
     private void actionPerformedProveedor() {

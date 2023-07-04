@@ -36,13 +36,10 @@ public class VVenta extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         lblId_cliente = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        lblFecha = new javax.swing.JLabel();
         txtId_cliente = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         txtTotal = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        txtFecha = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
         lblImpuesto = new javax.swing.JLabel();
         txtImpuesto = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
@@ -55,6 +52,10 @@ public class VVenta extends javax.swing.JInternalFrame {
         tblListaVentas = new javax.swing.JTable();
         lblTítuloListaVentas = new javax.swing.JLabel();
 
+        setClosable(true);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+
+        jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(88, 101, 242));
@@ -95,12 +96,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         lblTotal.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblTotal.setText("Total");
-        jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-
-        lblFecha.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
-        lblFecha.setText("Fecha");
-        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
+        jPanel2.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
 
         txtId_cliente.setBackground(new java.awt.Color(88, 101, 242));
         txtId_cliente.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
@@ -118,22 +114,11 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtTotal.setForeground(new java.awt.Color(250, 250, 250));
         txtTotal.setBorder(null);
         txtTotal.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
+        jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator3.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 190, 10));
-
-        txtFecha.setBackground(new java.awt.Color(88, 101, 242));
-        txtFecha.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtFecha.setForeground(new java.awt.Color(250, 250, 250));
-        txtFecha.setBorder(null);
-        txtFecha.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
-
-        jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
-        jSeparator4.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 190, 10));
 
         lblImpuesto.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblImpuesto.setForeground(new java.awt.Color(255, 255, 255));
@@ -236,7 +221,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaVentas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 580, 430));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 580, 430));
 
         lblTítuloListaVentas.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         lblTítuloListaVentas.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,9 +255,7 @@ public class VVenta extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblIconoVenta;
     private javax.swing.JLabel lblId_cliente;
     private javax.swing.JLabel lblId_usuario;
@@ -280,8 +263,7 @@ public class VVenta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTotal;
     private javax.swing.JLabel lblTítuloListaVentas;
     private javax.swing.JLabel lblTítuloNewVenta;
-    private javax.swing.JTable tblListaVentas;
-    public javax.swing.JTextField txtFecha;
+    public javax.swing.JTable tblListaVentas;
     public javax.swing.JTextField txtId_cliente;
     public javax.swing.JTextField txtId_usuario;
     public javax.swing.JTextField txtImpuesto;
