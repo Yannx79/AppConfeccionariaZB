@@ -26,7 +26,7 @@ public class CVenta implements ActionListener {
     //variable auxiliar
     int codVenta;
 
-    //Constuctor de controlador
+    //Constructor de controlador
     public CVenta(VVenta vista) {
         frame = vista;
         AgregarBotones(frame);
