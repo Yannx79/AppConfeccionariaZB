@@ -66,6 +66,17 @@ public class CAbastecer implements ActionListener{
             LimpiarEntradas(frame);
             codInsumo =0;
         }
+        if(e.getSource() == frame.btnEliminar){
+            insDTO = new InsumoDTO();
+            Eliminar(insDTO,insBO,codInsumo);
+            if(frame.tblListaInsumos.getRowCount() != 0){
+                Listar(insDTO,insBO);
+            }
+            DesactivarUPDEL(frame);
+            LimpiarEntradas(frame);
+            codInsumo =0;
+        }
+        
     }
     
     //Métodos auxiliares
@@ -169,6 +180,12 @@ public class CAbastecer implements ActionListener{
         dto.setDescuento(Double.parseDouble(frame.txtDescuento.getText()));       
         bo.actualizar(dto);        
     }
+    
+   public void Eliminar(InsumoDTO dto, InsumoBO bo, int codIns){
+       insDAO = new InsumoDAO();
+       bo.setInsumoDAO(insDAO);
+       bo.eliminar(codIns);       
+   }
     
 
 }
