@@ -105,5 +105,11 @@ public class ProductoDTO implements Serializable{
     public String toString() {
         return "ProductoDTO{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock + ", estado=" + estado + ", fechaInserccion=" + fechaInserccion + ", fechaActualizacion=" + fechaActualizacion + ", fechaEliminacion=" + fechaEliminacion + ", descuento=" + descuento + '}';
     }
-    
+ 
+    public Object[] Registro(){
+     Object[] fila = {idProducto,nombre,descripcion,precio,stock,estado,
+                     fechaInserccion,fechaActualizacion,fechaEliminacion,
+                     descuento};
+     return fila;
+    }   
 }

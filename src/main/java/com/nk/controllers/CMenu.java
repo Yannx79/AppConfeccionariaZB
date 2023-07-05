@@ -7,6 +7,7 @@ import com.nk.models.utilities.Desktop;
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
 import com.nk.views.VAbastecer;
+import com.nk.views.VMovimientoI;
 import com.nk.views.VVenta;
 //Manejo de frame de forma externa
 import java.awt.event.ActionEvent;
@@ -80,7 +81,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedMovimientosInternos() {
-
+        VMovimientoI vMovimientoI = new VMovimientoI();
+        CMovimientoI cMovimientoI = new CMovimientoI(vMovimientoI);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vMovimientoI);
     }
 
     private void actionPerformedCliente() {
