@@ -79,6 +79,8 @@ public class VentaDTO implements Serializable{
         return "VentaDTO{" + "id_venta=" + id_venta + ", id_usuario=" + id_usuario + ", id_cliente=" + id_cliente + ", total=" + total + ", fecha=" + fecha + ", impuesto=" + impuesto + ", estado=" + estado + '}';
     }
     
-    
-
+    public Object[] Registro(){
+     Object[] fila = {id_venta,id_usuario,id_cliente,total,fecha,impuesto,estado};
+     return fila;
+    }     
 }
