@@ -6,10 +6,13 @@ import com.nk.models.utilities.Desktop;
 //vistas
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
-import com.nk.views.VAbastecer;
+
+import com.nk.views.VAbastecer;//Manejo de frame de forma externa
+import com.nk.views.VCliente;//Manejo de frame de forma externa
+import com.nk.views.VProveedor;//Manejo de frame de forma externa
 import com.nk.views.VMovimientoI;
 import com.nk.views.VVenta;
-//Manejo de frame de forma externa
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -18,6 +21,7 @@ public class CMenu implements ActionListener {
 
     public static VMenu vista;
     public static UsuarioDTO usuarioDTO;
+    public static ClienteDTO clienteDTO;
 
     public CMenu(VMenu vmenu) {
         this.vista = vmenu;
@@ -32,6 +36,7 @@ public class CMenu implements ActionListener {
 
     public void inicializarObjetos() {
         usuarioDTO = new UsuarioDTO();
+        clienteDTO = new ClienteDTO();
     }
 
     public void builder() {
@@ -77,7 +82,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedProveedor() {
-
+        VProveedor vProveedor = new VProveedor();
+        CProveedor cProveedor = new CProveedor(vProveedor);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vProveedor);
     }
 
     private void actionPerformedMovimientosInternos() {
@@ -87,7 +94,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedCliente() {
-
+        VCliente vCliente = new VCliente();
+        CCliente cCliente = new CCliente(vCliente);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vCliente);
     }
 
     private void actionPerformedAbastecer() {
