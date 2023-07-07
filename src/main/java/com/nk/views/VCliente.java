@@ -54,6 +54,8 @@ public class VCliente extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaClientes = new javax.swing.JTable();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

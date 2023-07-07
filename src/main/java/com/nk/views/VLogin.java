@@ -51,7 +51,6 @@ public class VLogin extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBannerLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBannerLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nk/img/logo-principal-login.jpg"))); // NOI18N
         jPanel1.add(lblBannerLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 340, 400));
 
         lblLogoCentro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
