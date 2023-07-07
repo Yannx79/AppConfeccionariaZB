@@ -29,27 +29,27 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
 
 ### 3.1. Vista Menu
 
-![]()
+![Vista Menu](#31-vista-menu)
 
 ### 3.2. Vista Login
 
-![]()
+![Vista Login](#32-vista-login)
 
 ### 3.3. Vista Cliente
 
-![]()
+![](#33-vista-cliente)
 
 ### 3.4. Vista Proveedor
 
-![]()
+![](#34-vista-proveedor)
 
 ### 3.5. Vista Movimientos Internos
 
-![]()
+![](#35-vista-movimientos-internos)
 
 ### 3.6. Vista Venta
 
-![]()
+![](#36-vista-venta)
 
 ### 3.7. Vista Abastecimiento
 
