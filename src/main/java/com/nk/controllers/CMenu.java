@@ -6,9 +6,13 @@ import com.nk.models.utilities.Desktop;
 //vistas
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
+
 import com.nk.views.VAbastecer;//Manejo de frame de forma externa
 import com.nk.views.VCliente;//Manejo de frame de forma externa
 import com.nk.views.VProveedor;//Manejo de frame de forma externa
+import com.nk.views.VMovimientoI;
+import com.nk.views.VVenta;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -34,15 +38,15 @@ public class CMenu implements ActionListener {
         usuarioDTO = new UsuarioDTO();
         clienteDTO = new ClienteDTO();
     }
-    
+
     public void builder() {
         this.inicializarObjetos();
         this.addAllListener();
         this.construirVista();
         this.actionPerformedLogin();
     }
-    
-    public void addAllListener() { 
+
+    public void addAllListener() {
         this.vista.jmiAbastecer.addActionListener(this);
         this.vista.jmiCliente.addActionListener(this);
         this.vista.jmiMovimientosInternos.addActionListener(this);
@@ -51,7 +55,7 @@ public class CMenu implements ActionListener {
         this.vista.miLogin.addActionListener(this);
         this.vista.miLogout.addActionListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.jmiVenta) {
@@ -72,7 +76,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedVenta() {
-
+        VVenta vVenta = new VVenta();
+        CVenta cVenta = new CVenta(vVenta);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vVenta);
     }
 
     private void actionPerformedProveedor() {
@@ -82,7 +88,9 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedMovimientosInternos() {
-
+        VMovimientoI vMovimientoI = new VMovimientoI();
+        CMovimientoI cMovimientoI = new CMovimientoI(vMovimientoI);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vMovimientoI);
     }
 
     private void actionPerformedCliente() {
@@ -104,7 +112,7 @@ public class CMenu implements ActionListener {
     }
 
     private void actionPerformedLogout() {
-
+        actionPerformedLogin();
     }
 
 }

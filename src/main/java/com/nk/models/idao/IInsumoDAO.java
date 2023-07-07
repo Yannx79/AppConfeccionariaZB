@@ -10,11 +10,9 @@ public interface IInsumoDAO<T, K> extends IObjectDAO<T, K> {
     public static final String SQL_READ = "SELECT * FROM `insumo` WHERE `id_insumo` = ?";
     public static final String SQL_READ_ALL = "SELECT * FROM `insumo` WHERE 1";
     public static final String SQL_UPDATE = "UPDATE `insumo` SET `nombre`=?,"
-            + "`descripcion`=?,`precio`=?,`stock`=?,"
-            + "`estado`=?,`f_insercion`=?,"
-            + "`f_actualizacion`=?,`f_eliminacion`=?,"
+            + "`descripcion`=?,`precio`=?,`stock`=?,`estado`=?,`f_actualizacion`=curdate(),"
             + "`descuento`=? WHERE `id_insumo`=?";
-    public static final String SQL_DELETE = "UPDATE `insumo` SET `estado` = 0 "
+    public static final String SQL_DELETE = "UPDATE `insumo` SET `estado` = 0,`f_eliminacion` = curdate() "
             + "WHERE `id_insumo`=?";
     public static final Conexion CONEXION = Conexion.getConexion();
 

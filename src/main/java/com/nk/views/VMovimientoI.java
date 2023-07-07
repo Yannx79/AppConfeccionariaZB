@@ -31,31 +31,32 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         lblIconoProveedor = new javax.swing.JLabel();
         lblTítuloNewProveedor1 = new javax.swing.JLabel();
         lblNombres = new javax.swing.JLabel();
-        txtNombreProductoMI = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         lblApellPa = new javax.swing.JLabel();
-        lblApellMa = new javax.swing.JLabel();
         lblDNI = new javax.swing.JLabel();
-        txtPrecioMI = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        txtApellMa = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        txtDescripcionMI = new javax.swing.JTextField();
+        txtDescripcion = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         lblTelefono1 = new javax.swing.JLabel();
-        txtStockMI = new javax.swing.JTextField();
+        txtStock = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
-        btnRegistrarMI = new javax.swing.JButton();
-        btnActualizarMI = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        btnListarMI = new javax.swing.JButton();
-        btnConsultarMI = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
         lblTítuloNewProveedor3 = new javax.swing.JLabel();
+        lblDescuento = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        txtDescuento = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblListaProductos = new javax.swing.JTable();
         lblTítuloNewProveedor2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(54, 57, 63));
+        setClosable(true);
 
         jPanel2.setBackground(new java.awt.Color(88, 101, 242));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,15 +74,15 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
 
         lblNombres.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblNombres.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombres.setText("Nombre Producto");
+        lblNombres.setText("Nombre");
         jPanel2.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
-        txtNombreProductoMI.setBackground(new java.awt.Color(88, 101, 242));
-        txtNombreProductoMI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtNombreProductoMI.setForeground(new java.awt.Color(250, 250, 250));
-        txtNombreProductoMI.setBorder(null);
-        txtNombreProductoMI.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtNombreProductoMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
+        txtNombre.setBackground(new java.awt.Color(88, 101, 242));
+        txtNombre.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(250, 250, 250));
+        txtNombre.setBorder(null);
+        txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator1.setForeground(new java.awt.Color(54, 57, 63));
@@ -90,99 +91,83 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         lblApellPa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblApellPa.setForeground(new java.awt.Color(255, 255, 255));
         lblApellPa.setText("Precio");
-        jPanel2.add(lblApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-
-        lblApellMa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        lblApellMa.setForeground(new java.awt.Color(255, 255, 255));
-        lblApellMa.setText("Estado");
-        jPanel2.add(lblApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
+        jPanel2.add(lblApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         lblDNI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblDNI.setForeground(new java.awt.Color(255, 255, 255));
         lblDNI.setText("Descripcion");
-        jPanel2.add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
+        jPanel2.add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
-        txtPrecioMI.setBackground(new java.awt.Color(88, 101, 242));
-        txtPrecioMI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtPrecioMI.setForeground(new java.awt.Color(250, 250, 250));
-        txtPrecioMI.setBorder(null);
-        txtPrecioMI.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtPrecioMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
+        txtPrecio.setBackground(new java.awt.Color(88, 101, 242));
+        txtPrecio.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtPrecio.setForeground(new java.awt.Color(250, 250, 250));
+        txtPrecio.setBorder(null);
+        txtPrecio.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator2.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 190, 10));
 
-        txtApellMa.setBackground(new java.awt.Color(88, 101, 242));
-        txtApellMa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtApellMa.setForeground(new java.awt.Color(250, 250, 250));
-        txtApellMa.setBorder(null);
-        txtApellMa.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
-
-        jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
-        jSeparator3.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 190, 10));
-
-        txtDescripcionMI.setBackground(new java.awt.Color(88, 101, 242));
-        txtDescripcionMI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtDescripcionMI.setForeground(new java.awt.Color(250, 250, 250));
-        txtDescripcionMI.setBorder(null);
-        txtDescripcionMI.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtDescripcionMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
+        txtDescripcion.setBackground(new java.awt.Color(88, 101, 242));
+        txtDescripcion.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtDescripcion.setForeground(new java.awt.Color(250, 250, 250));
+        txtDescripcion.setBorder(null);
+        txtDescripcion.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 200, 40));
 
         jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator4.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 10));
 
         lblTelefono1.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblTelefono1.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefono1.setText("Stock");
-        jPanel2.add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+        jPanel2.add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
 
-        txtStockMI.setBackground(new java.awt.Color(88, 101, 242));
-        txtStockMI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtStockMI.setForeground(new java.awt.Color(250, 250, 250));
-        txtStockMI.setBorder(null);
-        txtStockMI.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtStockMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
+        txtStock.setBackground(new java.awt.Color(88, 101, 242));
+        txtStock.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtStock.setForeground(new java.awt.Color(250, 250, 250));
+        txtStock.setBorder(null);
+        txtStock.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator6.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 200, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
 
-        btnRegistrarMI.setBackground(new java.awt.Color(54, 57, 63));
-        btnRegistrarMI.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnRegistrarMI.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrarMI.setText("Registrar");
-        btnRegistrarMI.setBorder(null);
-        btnRegistrarMI.setContentAreaFilled(false);
-        btnRegistrarMI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegistrarMI.setFocusPainted(false);
-        btnRegistrarMI.setFocusable(false);
-        btnRegistrarMI.setOpaque(true);
-        btnRegistrarMI.setRequestFocusEnabled(false);
-        btnRegistrarMI.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 130, 50));
+        btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
+        btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.setBorder(null);
+        btnRegistrar.setContentAreaFilled(false);
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrar.setFocusPainted(false);
+        btnRegistrar.setFocusable(false);
+        btnRegistrar.setOpaque(true);
+        btnRegistrar.setRequestFocusEnabled(false);
+        btnRegistrar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 130, 50));
 
-        btnActualizarMI.setBackground(new java.awt.Color(54, 57, 63));
-        btnActualizarMI.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnActualizarMI.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizarMI.setText("Actualizar");
-        btnActualizarMI.setBorder(null);
-        btnActualizarMI.setContentAreaFilled(false);
-        btnActualizarMI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnActualizarMI.setFocusPainted(false);
-        btnActualizarMI.setFocusable(false);
-        btnActualizarMI.setOpaque(true);
-        btnActualizarMI.setRequestFocusEnabled(false);
-        btnActualizarMI.setVerifyInputWhenFocusTarget(false);
-        btnActualizarMI.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
+        btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setBorder(null);
+        btnActualizar.setContentAreaFilled(false);
+        btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizar.setFocusPainted(false);
+        btnActualizar.setFocusable(false);
+        btnActualizar.setOpaque(true);
+        btnActualizar.setRequestFocusEnabled(false);
+        btnActualizar.setVerifyInputWhenFocusTarget(false);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarMIActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnActualizarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 50));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 50));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
@@ -198,40 +183,56 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnEliminar.setVerifyInputWhenFocusTarget(false);
         jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 130, 50));
 
-        btnListarMI.setBackground(new java.awt.Color(54, 57, 63));
-        btnListarMI.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnListarMI.setForeground(new java.awt.Color(255, 255, 255));
-        btnListarMI.setText("Listar");
-        btnListarMI.setBorder(null);
-        btnListarMI.setContentAreaFilled(false);
-        btnListarMI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnListarMI.setFocusPainted(false);
-        btnListarMI.setFocusable(false);
-        btnListarMI.setOpaque(true);
-        btnListarMI.setRequestFocusEnabled(false);
-        btnListarMI.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnListarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 130, 50));
+        btnListar.setBackground(new java.awt.Color(54, 57, 63));
+        btnListar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnListar.setForeground(new java.awt.Color(255, 255, 255));
+        btnListar.setText("Listar");
+        btnListar.setBorder(null);
+        btnListar.setContentAreaFilled(false);
+        btnListar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnListar.setFocusPainted(false);
+        btnListar.setFocusable(false);
+        btnListar.setOpaque(true);
+        btnListar.setRequestFocusEnabled(false);
+        btnListar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 130, 50));
 
-        btnConsultarMI.setBackground(new java.awt.Color(54, 57, 63));
-        btnConsultarMI.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnConsultarMI.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultarMI.setText("Consultar");
-        btnConsultarMI.setBorder(null);
-        btnConsultarMI.setContentAreaFilled(false);
-        btnConsultarMI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConsultarMI.setFocusPainted(false);
-        btnConsultarMI.setFocusable(false);
-        btnConsultarMI.setOpaque(true);
-        btnConsultarMI.setRequestFocusEnabled(false);
-        btnConsultarMI.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultarMI, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 130, 50));
+        btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
+        btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setText("Consultar");
+        btnConsultar.setBorder(null);
+        btnConsultar.setContentAreaFilled(false);
+        btnConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsultar.setFocusPainted(false);
+        btnConsultar.setFocusable(false);
+        btnConsultar.setOpaque(true);
+        btnConsultar.setRequestFocusEnabled(false);
+        btnConsultar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 130, 50));
 
         lblTítuloNewProveedor3.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         lblTítuloNewProveedor3.setForeground(new java.awt.Color(255, 255, 255));
         lblTítuloNewProveedor3.setText("MOVIMIENTOS");
         jPanel2.add(lblTítuloNewProveedor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 290, 50));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        lblDescuento.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        lblDescuento.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescuento.setText("Descuento");
+        jPanel2.add(lblDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+
+        jSeparator7.setBackground(new java.awt.Color(54, 57, 63));
+        jSeparator7.setForeground(new java.awt.Color(54, 57, 63));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 200, 10));
+
+        txtDescuento.setBackground(new java.awt.Color(88, 101, 242));
+        txtDescuento.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtDescuento.setForeground(new java.awt.Color(250, 250, 250));
+        txtDescuento.setBorder(null);
+        txtDescuento.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
+
+        tblListaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -242,7 +243,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblListaProductos);
 
         lblTítuloNewProveedor2.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         lblTítuloNewProveedor2.setForeground(new java.awt.Color(255, 255, 255));
@@ -257,58 +258,58 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(137, 137, 137)
                         .addComponent(lblTítuloNewProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTítuloNewProveedor2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnActualizarMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarMIActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarMIActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnActualizarMI;
-    public javax.swing.JButton btnConsultarMI;
+    public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnConsultar;
     public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnListarMI;
-    public javax.swing.JButton btnRegistrarMI;
+    public javax.swing.JButton btnListar;
+    public javax.swing.JButton btnRegistrar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblApellMa;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lblApellPa;
     private javax.swing.JLabel lblDNI;
+    private javax.swing.JLabel lblDescuento;
     private javax.swing.JLabel lblIconoProveedor;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblTelefono1;
     private javax.swing.JLabel lblTítuloNewProveedor1;
     private javax.swing.JLabel lblTítuloNewProveedor2;
     private javax.swing.JLabel lblTítuloNewProveedor3;
-    public javax.swing.JTextField txtApellMa;
-    public javax.swing.JTextField txtDescripcionMI;
-    public javax.swing.JTextField txtNombreProductoMI;
-    public javax.swing.JTextField txtPrecioMI;
-    public javax.swing.JTextField txtStockMI;
+    public javax.swing.JTable tblListaProductos;
+    public javax.swing.JTextField txtDescripcion;
+    public javax.swing.JTextField txtDescuento;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtPrecio;
+    public javax.swing.JTextField txtStock;
     // End of variables declaration//GEN-END:variables
 }
