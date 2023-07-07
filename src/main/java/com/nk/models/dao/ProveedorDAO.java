@@ -22,10 +22,7 @@ public class ProveedorDAO implements IProveedorDAO<ProveedorDTO, Integer> {
             ps.setString(4, t.getRuc());
             ps.setString(5, t.getDni());
             ps.setString(6, t.getTelefono());
-            ps.setString(7, t.getfInsercion());
-            ps.setString(8, t.getfActualizacion());
-            ps.setString(9, t.getfEliminacion());
-            ps.setInt(10, t.getEstado());
+            ps.setInt(7, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error ProveedorDAO: " + e);
@@ -104,11 +101,8 @@ public class ProveedorDAO implements IProveedorDAO<ProveedorDTO, Integer> {
             ps.setString(4, t.getRuc());
             ps.setString(5, t.getDni());
             ps.setString(6, t.getTelefono());
-            ps.setString(7, t.getfInsercion());
-            ps.setString(8, t.getfActualizacion());
-            ps.setString(9, t.getfEliminacion());
-            ps.setInt(10, t.getEstado());
-            ps.setInt(11, t.getIdProveedor());
+            ps.setInt(7, t.getEstado());
+            ps.setInt(8, t.getIdProveedor());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error ProveedorDAO: " + e);

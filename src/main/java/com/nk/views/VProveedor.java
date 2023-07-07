@@ -301,7 +301,7 @@ public class VProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTelefono1;
     private javax.swing.JLabel lblTítuloListaProveedores;
     private javax.swing.JLabel lblTítuloNewProveedor1;
-    private javax.swing.JTable tblListaProveedores;
+    public javax.swing.JTable tblListaProveedores;
     public javax.swing.JTextField txtApellMa;
     public javax.swing.JTextField txtApellPa;
     public javax.swing.JTextField txtDNI;

@@ -28,7 +28,7 @@ public class VCliente extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtNombres = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         lblNombres = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lblApellPa = new javax.swing.JLabel();
@@ -60,12 +60,12 @@ public class VCliente extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(88, 101, 242));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtNombres.setBackground(new java.awt.Color(88, 101, 242));
-        txtNombres.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txtNombres.setForeground(new java.awt.Color(250, 250, 250));
-        txtNombres.setBorder(null);
-        txtNombres.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 300, 40));
+        txtNombre.setBackground(new java.awt.Color(88, 101, 242));
+        txtNombre.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(250, 250, 250));
+        txtNombre.setBorder(null);
+        txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 300, 40));
 
         lblNombres.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblNombres.setForeground(new java.awt.Color(255, 255, 255));
@@ -280,11 +280,11 @@ public class VCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTituloListaClientes;
     private javax.swing.JLabel lblTítuloNewCliente;
-    private javax.swing.JTable tblListaClientes;
+    public javax.swing.JTable tblListaClientes;
     public javax.swing.JTextField txtApellMa;
     public javax.swing.JTextField txtApellPa;
     public javax.swing.JTextField txtDNI;
-    public javax.swing.JTextField txtNombres;
+    public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

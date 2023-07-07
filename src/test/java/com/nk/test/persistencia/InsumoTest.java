@@ -6,7 +6,7 @@ import com.nk.models.datasource.Conexion;
 import com.nk.models.dto.InsumoDTO;
 
 //Importaciones para prueba con frame
-import com.nk.controllers.CAbastecer;
+//import com.nk.controllers.CAbastecer;
 import com.nk.views.VAbastecer;
 
 public class InsumoTest {
