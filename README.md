@@ -29,7 +29,7 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
 
 ### 3.1. Vista Menu
 
-![Vista Menu](/src/doc/Vista-Abastecer.PNG)
+![Vista Menu](/src/doc/Vista-Menu.PNG)
 
 ### 3.2. Vista Login
 
@@ -37,23 +37,23 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
 
 ### 3.3. Vista Cliente
 
-![](#33-vista-cliente)
+![Vista Cliente](/src/doc/Vista-Cliente.PNG)
 
 ### 3.4. Vista Proveedor
 
-![](#34-vista-proveedor)
+![Vista Proveedor](/src/doc/Vista-Proveedor.PNG)
 
 ### 3.5. Vista Movimientos Internos
 
-![](#35-vista-movimientos-internos)
+![Vista Movimientos Internos](/src/doc/Vista-Movimientos-Internos.PNG)
 
 ### 3.6. Vista Venta
 
-![](#36-vista-venta)
+![Vista Venta](/src/doc/Vista-Venta.PNG)
 
 ### 3.7. Vista Abastecimiento
 
-![]()
+![Vista Abastecimiento](/src/doc/Vista-Abastecer.PNG)
 
 ## 4. Roles
 
