@@ -29,11 +29,11 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
 
 ### 3.1. Vista Menu
 
-![Vista Menu](#31-vista-menu)
+![Vista Menu](/src/doc/Vista-Abastecer.PNG)
 
 ### 3.2. Vista Login
 
-![Vista Login](#32-vista-login)
+![Vista Login](/src/doc/Vista-Login.PNG)
 
 ### 3.3. Vista Cliente
 
