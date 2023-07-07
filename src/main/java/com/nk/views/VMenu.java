@@ -72,12 +72,27 @@ public class VMenu extends javax.swing.JFrame {
         jmOperaciones.add(jmiMovimientosInternos);
 
         jmiAbastecer.setText("Abastecer");
+        jmiAbastecer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAbastecerActionPerformed(evt);
+            }
+        });
         jmOperaciones.add(jmiAbastecer);
 
         jmiVenta.setText("Venta");
+        jmiVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiVentaActionPerformed(evt);
+            }
+        });
         jmOperaciones.add(jmiVenta);
 
         jmiCliente.setText("Cliente");
+        jmiCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiClienteActionPerformed(evt);
+            }
+        });
         jmOperaciones.add(jmiCliente);
 
         jmiProveedor.setText("Proveedor");
@@ -104,6 +119,18 @@ public class VMenu extends javax.swing.JFrame {
     private void jmiMovimientosInternosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMovimientosInternosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmiMovimientosInternosActionPerformed
+
+    private void jmiClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiClienteActionPerformed
+
+    private void jmiVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiVentaActionPerformed
+
+    private void jmiAbastecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAbastecerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAbastecerActionPerformed
 
     /**
      * @param args the command line arguments

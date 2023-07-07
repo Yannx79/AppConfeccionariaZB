@@ -106,5 +106,11 @@ public class ClienteDTO implements Serializable {
     public String toString() {
         return "ClienteDTO{" + "idCliente=" + idCliente + ", nombres=" + nombres + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", dni=" + dni + ", telefono=" + telefono + ", fInsercion=" + fInsercion + ", fActualizacion=" + fActualizacion + ", fEliminacion=" + fEliminacion + ", estado=" + estado + '}';
     }
+        public Object[] Registro(){
+     Object[] fila = {idCliente,nombres,apPaterno,apMaterno,dni,telefono,
+                     fInsercion,fActualizacion,fEliminacion,
+                     estado};
+     return fila;
+    }
 
 }

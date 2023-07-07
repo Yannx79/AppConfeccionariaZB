@@ -114,6 +114,12 @@ public class ProveedorDTO implements Serializable {
    @Override
     public String toString() {
         return "ProveedorDTO{" + "idProveedor  =" + idProveedor   + ", nombres=" + nombres + ", apPaterno=" + apPaterno + ", apMaterno=" + apMaterno + ", ruc=" + ruc + ", dni=" + dni + ", telefono=" + telefono + ", fInsercion=" + fInsercion + ", fActualizacion=" + fActualizacion + ", fEliminacion=" + fEliminacion + ", estado=" + estado + '}';
-    }  
+    }
+           public Object[] Registro(){
+     Object[] fila = {idProveedor,nombres,apPaterno,apMaterno,ruc,dni,telefono,
+                     fInsercion,fActualizacion,fEliminacion,
+                     estado};
+     return fila;
+    }
     
 }

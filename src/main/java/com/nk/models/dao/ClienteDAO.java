@@ -22,10 +22,7 @@ public class ClienteDAO implements IClienteDAO<ClienteDTO, Integer> {
             ps.setString(3, t.getApMaterno());
             ps.setString(4, t.getDni());
             ps.setString(5, t.getTelefono());
-            ps.setString(6, t.getfInsercion());
-            ps.setString(7, t.getfActualizacion());
-            ps.setString(8, t.getfEliminacion());
-            ps.setDouble(9, t.getEstado());
+            ps.setDouble(6, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error ClienteDAO: " + e);
@@ -103,11 +100,8 @@ public class ClienteDAO implements IClienteDAO<ClienteDTO, Integer> {
             ps.setString(3, t.getApMaterno());
             ps.setString(4, t.getDni());
             ps.setString(5, t.getTelefono());
-            ps.setString(6, t.getfInsercion());
-            ps.setString(7, t.getfActualizacion());
-            ps.setString(8, t.getfEliminacion());
-            ps.setInt(9, t.getEstado());
-            ps.setInt(10, t.getIdCliente());
+            ps.setInt(6, t.getEstado());
+            ps.setInt(7, t.getIdCliente());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error ClienteDAO: " + e);
