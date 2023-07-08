@@ -161,7 +161,9 @@ public class CVenta implements ActionListener {
         bo.setVentaDAO(venDAO);
         L_ventas = bo.listar();
         for (int i = 0; i < L_ventas.size(); i++) {
-            modelo.addRow(L_ventas.get(i).Registro());
+            if (L_ventas.get(i).getEstado() == 1) {
+                modelo.addRow(L_ventas.get(i).Registro());
+            }
         }
     }
 

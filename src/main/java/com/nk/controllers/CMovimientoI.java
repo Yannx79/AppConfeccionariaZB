@@ -165,9 +165,12 @@ public class CMovimientoI implements ActionListener {
         bo.setProductoDAO(proDAO);
         L_productos = bo.listar();
         for (int i = 0; i < L_productos.size(); i++) {
-            modelo.addRow(L_productos.get(i).Registro());
+            if (L_productos.get(i).getEstado() == 1) {
+                modelo.addRow(L_productos.get(i).Registro());
+            }
         }
     }
+    
 
     public void Actualizar(ProductoDTO dto, ProductoBO bo, int codPro) {
         proDAO = new ProductoDAO();
