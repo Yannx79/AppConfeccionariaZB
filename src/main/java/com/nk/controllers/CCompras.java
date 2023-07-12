@@ -16,6 +16,7 @@ import com.nk.models.dto.InsumoDTO;
 import com.nk.models.utilities.Desktop;
 import com.nk.views.VAbastecer;
 import com.nk.views.VCompras;
+import com.nk.views.VFichaCompra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
@@ -108,18 +109,20 @@ public class CCompras implements ActionListener {
         } else if (e.getSource() == view.btnRegistrar) {
             this.actionPerformedRegistrar();
         } else if (e.getSource() == view.btnVerCompras) {
-            
+            actionPerformedVerCompras();
         } else if (e.getSource() == view.btnVerInsumos) {
             this.actionPerformedVerInsumos();
         }
     }
     
     private void actionPerformedVerCompras() {
-        
+        VFichaCompra vFichaCompra = new VFichaCompra();
+        CFichaCompra cFichaCompra = new CFichaCompra(vFichaCompra);
+        Desktop.agregarAlDesktop(CMenu.vista.desktopMenu, vFichaCompra);
     }
     
     private void actionPerformedVerInsumos() {
-         VAbastecer vAbastecer = new VAbastecer();
+        VAbastecer vAbastecer = new VAbastecer();
         CAbastecer cAbastecer = new CAbastecer(vAbastecer);
         Desktop.agregarAlDesktop(CMenu.vista.desktopMenu, vAbastecer);
     
