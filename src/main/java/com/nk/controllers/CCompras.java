@@ -110,7 +110,7 @@ public class CCompras implements ActionListener {
         } else if (e.getSource() == view.btnVerCompras) {
             
         } else if (e.getSource() == view.btnVerInsumos) {
-            
+            this.actionPerformedVerInsumos();
         }
     }
     

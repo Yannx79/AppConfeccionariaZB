@@ -77,5 +77,10 @@ public class CompraDTO implements Serializable {
     public String toString() {
         return "CompraDTO{" + "id_compra=" + id_compra + ", id_proveedor=" + id_proveedor + ", id_usuario=" + id_usuario + ", total=" + total + ", fecha=" + fecha + ", impuesto=" + impuesto + ", estado=" + estado + '}';
     }
+    
+    public Object[] Registro(){
+     Object[] fila = {id_compra,id_proveedor,id_usuario,total,fecha,impuesto,estado};
+     return fila;
+    }   
 
 }
