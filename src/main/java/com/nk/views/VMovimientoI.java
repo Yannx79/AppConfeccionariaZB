@@ -5,6 +5,10 @@
  */
 package com.nk.views;
 
+import java.awt.print.PrinterException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Usuario
@@ -28,8 +32,6 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        lblIconoProveedor = new javax.swing.JLabel();
-        lblTítuloNewProveedor1 = new javax.swing.JLabel();
         lblNombres = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -47,30 +49,25 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        lblTítuloNewProveedor3 = new javax.swing.JLabel();
         lblDescuento = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         txtDescuento = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblTítuloNewInsumo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaProductos = new javax.swing.JTable();
-        lblTítuloNewProveedor2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblTituloListaClientes = new javax.swing.JLabel();
+        btnDes = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(54, 57, 63));
         setClosable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(88, 101, 242));
+        jPanel2.setBackground(new java.awt.Color(77, 90, 225));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIconoProveedor.setBackground(new java.awt.Color(88, 101, 242));
-        lblIconoProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        lblIconoProveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconoProveedor.setText("(colocar icono proveedor- editar luego)");
-        jPanel2.add(lblIconoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, 80));
-
-        lblTítuloNewProveedor1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewProveedor1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewProveedor1.setText("INTERNOS");
-        jPanel2.add(lblTítuloNewProveedor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 200, 50));
 
         lblNombres.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblNombres.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,7 +77,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtNombre.setBackground(new java.awt.Color(88, 101, 242));
         txtNombre.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(250, 250, 250));
-        txtNombre.setBorder(null);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
@@ -101,7 +98,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtPrecio.setBackground(new java.awt.Color(88, 101, 242));
         txtPrecio.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtPrecio.setForeground(new java.awt.Color(250, 250, 250));
-        txtPrecio.setBorder(null);
+        txtPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtPrecio.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
@@ -112,7 +109,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtDescripcion.setBackground(new java.awt.Color(88, 101, 242));
         txtDescripcion.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtDescripcion.setForeground(new java.awt.Color(250, 250, 250));
-        txtDescripcion.setBorder(null);
+        txtDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDescripcion.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 200, 40));
 
@@ -128,7 +125,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtStock.setBackground(new java.awt.Color(88, 101, 242));
         txtStock.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtStock.setForeground(new java.awt.Color(250, 250, 250));
-        txtStock.setBorder(null);
+        txtStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtStock.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
@@ -137,8 +134,9 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
 
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
-        btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -148,11 +146,12 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnRegistrar.setOpaque(true);
         btnRegistrar.setRequestFocusEnabled(false);
         btnRegistrar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 130, 50));
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 160, 70));
 
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
-        btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -167,11 +166,12 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 50));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 160, 70));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
-        btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -181,11 +181,12 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnEliminar.setOpaque(true);
         btnEliminar.setRequestFocusEnabled(false);
         btnEliminar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 130, 50));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 150, 70));
 
         btnListar.setBackground(new java.awt.Color(54, 57, 63));
-        btnListar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnListar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
+        btnListar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnListar.setText("Listar");
         btnListar.setBorder(null);
         btnListar.setContentAreaFilled(false);
@@ -195,11 +196,12 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnListar.setOpaque(true);
         btnListar.setRequestFocusEnabled(false);
         btnListar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 130, 50));
+        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 150, 70));
 
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
-        btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnConsultar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -209,12 +211,7 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         btnConsultar.setOpaque(true);
         btnConsultar.setRequestFocusEnabled(false);
         btnConsultar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 130, 50));
-
-        lblTítuloNewProveedor3.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewProveedor3.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewProveedor3.setText("MOVIMIENTOS");
-        jPanel2.add(lblTítuloNewProveedor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 290, 50));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 160, 70));
 
         lblDescuento.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblDescuento.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,9 +225,27 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtDescuento.setBackground(new java.awt.Color(88, 101, 242));
         txtDescuento.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtDescuento.setForeground(new java.awt.Color(250, 250, 250));
-        txtDescuento.setBorder(null);
+        txtDescuento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDescuento.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
+
+        jPanel3.setBackground(new java.awt.Color(26, 36, 140));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\deposito.png")); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 80));
+
+        lblTítuloNewInsumo.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        lblTítuloNewInsumo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTítuloNewInsumo.setText("MOVIMIENTOS I.");
+        jPanel3.add(lblTítuloNewInsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, 50));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 100));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 618));
+
+        jPanel1.setBackground(new java.awt.Color(54, 57, 63));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblListaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -245,35 +260,44 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaProductos);
 
-        lblTítuloNewProveedor2.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewProveedor2.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewProveedor2.setText("LISTA DE PRODUCTOS");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 700, 400));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(lblTítuloNewProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
+
+        lblTituloListaClientes.setFont(new java.awt.Font("Segoe UI Black", 1, 55)); // NOI18N
+        lblTituloListaClientes.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloListaClientes.setText("LISTA DE PRODUCTOS");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(lblTituloListaClientes)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTítuloNewProveedor2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, -1));
+
+        btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
+        btnDes.setText("Descargar");
+        btnDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 200, 60));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 730, 618));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,14 +306,27 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarActionPerformed
 
+    private void btnDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesActionPerformed
+        try {
+            tblListaProductos.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(VMovimientoI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnDesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnDes;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnListar;
     public javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -299,12 +336,10 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblApellPa;
     private javax.swing.JLabel lblDNI;
     private javax.swing.JLabel lblDescuento;
-    private javax.swing.JLabel lblIconoProveedor;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblTelefono1;
-    private javax.swing.JLabel lblTítuloNewProveedor1;
-    private javax.swing.JLabel lblTítuloNewProveedor2;
-    private javax.swing.JLabel lblTítuloNewProveedor3;
+    private javax.swing.JLabel lblTituloListaClientes;
+    private javax.swing.JLabel lblTítuloNewInsumo;
     public javax.swing.JTable tblListaProductos;
     public javax.swing.JTextField txtDescripcion;
     public javax.swing.JTextField txtDescuento;
