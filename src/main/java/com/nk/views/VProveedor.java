@@ -82,6 +82,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtNombres.setForeground(new java.awt.Color(250, 250, 250));
         txtNombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtNombres.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombresKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
@@ -113,6 +118,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtApellPa.setForeground(new java.awt.Color(250, 250, 250));
         txtApellPa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtApellPa.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtApellPa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellPaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
@@ -124,6 +134,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtApellMa.setForeground(new java.awt.Color(250, 250, 250));
         txtApellMa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtApellMa.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtApellMa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellMaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
@@ -135,6 +150,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtRUC.setForeground(new java.awt.Color(250, 250, 250));
         txtRUC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtRUC.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtRUC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRUCKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
@@ -146,6 +166,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtTelefono.setForeground(new java.awt.Color(250, 250, 250));
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtTelefono.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 200, 40));
 
         jSeparator5.setBackground(new java.awt.Color(54, 57, 63));
@@ -162,6 +187,11 @@ public class VProveedor extends javax.swing.JInternalFrame {
         txtDNI.setForeground(new java.awt.Color(250, 250, 250));
         txtDNI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDNI.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtDNI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDNIKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
@@ -181,7 +211,12 @@ public class VProveedor extends javax.swing.JInternalFrame {
         btnRegistrar.setOpaque(true);
         btnRegistrar.setRequestFocusEnabled(false);
         btnRegistrar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 160, 70));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 160, 70));
 
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
         btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
@@ -196,7 +231,7 @@ public class VProveedor extends javax.swing.JInternalFrame {
         btnActualizar.setOpaque(true);
         btnActualizar.setRequestFocusEnabled(false);
         btnActualizar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 160, 70));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 160, 70));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
@@ -241,7 +276,7 @@ public class VProveedor extends javax.swing.JInternalFrame {
         btnConsultar.setOpaque(true);
         btnConsultar.setRequestFocusEnabled(false);
         btnConsultar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 160, 70));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 160, 70));
 
         jPanel3.setBackground(new java.awt.Color(26, 36, 140));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,6 +361,49 @@ public class VProveedor extends javax.swing.JInternalFrame {
             Logger.getLogger(VProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnDesActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombresKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' '))
+            evt.consume();
+    }//GEN-LAST:event_txtNombresKeyTyped
+
+    private void txtApellPaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellPaKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' '))
+            evt.consume();
+    }//GEN-LAST:event_txtApellPaKeyTyped
+
+    private void txtApellMaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellMaKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' '))
+            evt.consume();
+    }//GEN-LAST:event_txtApellMaKeyTyped
+
+    private void txtRUCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRUCKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtRUCKeyTyped
+
+    private void txtDNIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtDNIKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtTelefonoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

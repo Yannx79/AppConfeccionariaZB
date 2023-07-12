@@ -79,6 +79,11 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtNombre.setForeground(new java.awt.Color(250, 250, 250));
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
@@ -100,6 +105,11 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtPrecio.setForeground(new java.awt.Color(250, 250, 250));
         txtPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtPrecio.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
@@ -127,6 +137,11 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtStock.setForeground(new java.awt.Color(250, 250, 250));
         txtStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtStock.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtStock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtStockKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
@@ -227,6 +242,11 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
         txtDescuento.setForeground(new java.awt.Color(250, 250, 250));
         txtDescuento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDescuento.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDescuentoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jPanel3.setBackground(new java.awt.Color(26, 36, 140));
@@ -313,6 +333,30 @@ public class VMovimientoI extends javax.swing.JInternalFrame {
             Logger.getLogger(VMovimientoI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnDesActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' '))
+            evt.consume();
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtStockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtStockKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txtStockKeyTyped
+
+    private void txtDescuentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescuentoKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txtDescuentoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

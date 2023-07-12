@@ -78,6 +78,11 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtId_usuario.setForeground(new java.awt.Color(250, 250, 250));
         txtId_usuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtId_usuario.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtId_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtId_usuarioKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtId_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
@@ -99,6 +104,11 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtId_cliente.setForeground(new java.awt.Color(250, 250, 250));
         txtId_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtId_cliente.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtId_cliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtId_clienteKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtId_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
@@ -110,6 +120,11 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtTotal.setForeground(new java.awt.Color(250, 250, 250));
         txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtTotal.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtTotal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTotalKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
@@ -126,6 +141,11 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtImpuesto.setForeground(new java.awt.Color(250, 250, 250));
         txtImpuesto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtImpuesto.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtImpuesto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtImpuestoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtImpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
@@ -293,6 +313,34 @@ public class VVenta extends javax.swing.JInternalFrame {
             Logger.getLogger(VVenta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnDesActionPerformed
+
+    private void txtId_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtId_usuarioKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtId_usuarioKeyTyped
+
+    private void txtId_clienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtId_clienteKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtId_clienteKeyTyped
+
+    private void txtTotalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtTotalKeyTyped
+
+    private void txtImpuestoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImpuestoKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtImpuestoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
