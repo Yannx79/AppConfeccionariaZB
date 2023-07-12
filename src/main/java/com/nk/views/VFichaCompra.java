@@ -5,6 +5,10 @@
 
 package com.nk.views;
 
+import java.awt.print.PrinterException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Pc
@@ -27,8 +31,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        lblIconoFichaCompra = new javax.swing.JLabel();
-        lblTítuloFichaCompra = new javax.swing.JLabel();
         lbl_IdCompra = new javax.swing.JLabel();
         txt_IdCompra = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -47,110 +49,125 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnActualizar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblTítuloFichaCompra = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaCompras = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
         lblTítuloListaCompras = new javax.swing.JLabel();
+        btnDes = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(88, 101, 242));
+        jPanel2.setBackground(new java.awt.Color(77, 90, 225));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIconoFichaCompra.setBackground(new java.awt.Color(88, 101, 242));
-        lblIconoFichaCompra.setForeground(new java.awt.Color(255, 255, 255));
-        lblIconoFichaCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconoFichaCompra.setText("(colocar icono Insumo - editar luego)");
-        jPanel2.add(lblIconoFichaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, 80));
-
-        lblTítuloFichaCompra.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloFichaCompra.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloFichaCompra.setText("COMPRA");
-        jPanel2.add(lblTítuloFichaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, 50));
 
         lbl_IdCompra.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lbl_IdCompra.setForeground(new java.awt.Color(255, 255, 255));
         lbl_IdCompra.setText("ID compra");
-        jPanel2.add(lbl_IdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel2.add(lbl_IdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         txt_IdCompra.setBackground(new java.awt.Color(88, 101, 242));
         txt_IdCompra.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txt_IdCompra.setForeground(new java.awt.Color(250, 250, 250));
-        txt_IdCompra.setBorder(null);
+        txt_IdCompra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txt_IdCompra.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txt_IdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, 40));
+        txt_IdCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_IdCompraKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txt_IdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator1.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 190, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, 10));
 
         lbl_IdUsuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lbl_IdUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lbl_IdUsuario.setText("ID usuario");
-        jPanel2.add(lbl_IdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel2.add(lbl_IdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         lblEstado.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblEstado.setForeground(new java.awt.Color(255, 255, 255));
         lblEstado.setText("Estado");
-        jPanel2.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
+        jPanel2.add(lblEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         lbl_IdProveedor.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lbl_IdProveedor.setForeground(new java.awt.Color(255, 255, 255));
         lbl_IdProveedor.setText("ID Proveedor");
-        jPanel2.add(lbl_IdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        jPanel2.add(lbl_IdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
 
         txt_IdUsuario.setBackground(new java.awt.Color(88, 101, 242));
         txt_IdUsuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txt_IdUsuario.setForeground(new java.awt.Color(250, 250, 250));
-        txt_IdUsuario.setBorder(null);
+        txt_IdUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txt_IdUsuario.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txt_IdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 190, 40));
+        txt_IdUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_IdUsuarioKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txt_IdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator2.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 190, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 10));
 
         txtEstado.setBackground(new java.awt.Color(88, 101, 242));
         txtEstado.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtEstado.setForeground(new java.awt.Color(250, 250, 250));
-        txtEstado.setBorder(null);
+        txtEstado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtEstado.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 190, 40));
+        txtEstado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEstadoKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator3.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 190, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 190, 10));
 
         txt_IdProveedor.setBackground(new java.awt.Color(88, 101, 242));
         txt_IdProveedor.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txt_IdProveedor.setForeground(new java.awt.Color(250, 250, 250));
-        txt_IdProveedor.setBorder(null);
+        txt_IdProveedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txt_IdProveedor.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txt_IdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 200, 40));
+        txt_IdProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_IdProveedorKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txt_IdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator4.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 200, 10));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
 
         lblFecha.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(255, 255, 255));
         lblFecha.setText("Fecha");
-        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
 
         txtFecha.setBackground(new java.awt.Color(88, 101, 242));
         txtFecha.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(250, 250, 250));
-        txtFecha.setBorder(null);
+        txtFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtFecha.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 200, 40));
+        jPanel2.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator6.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 200, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 200, 10));
 
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
-        btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -160,11 +177,12 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnActualizar.setOpaque(true);
         btnActualizar.setRequestFocusEnabled(false);
         btnActualizar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 50));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 180, 70));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
-        btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -174,11 +192,12 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnEliminar.setOpaque(true);
         btnEliminar.setRequestFocusEnabled(false);
         btnEliminar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 130, 50));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 150, 70));
 
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
-        btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -188,9 +207,23 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnConsultar.setOpaque(true);
         btnConsultar.setRequestFocusEnabled(false);
         btnConsultar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 130, 50));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 150, 70));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 630));
+        jPanel3.setBackground(new java.awt.Color(26, 36, 140));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\camion-reparto.png")); // NOI18N
+        jLabel2.setToolTipText("");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 100));
+
+        lblTítuloFichaCompra.setFont(new java.awt.Font("Segoe UI Black", 1, 45)); // NOI18N
+        lblTítuloFichaCompra.setForeground(new java.awt.Color(255, 255, 255));
+        lblTítuloFichaCompra.setText("COMPRA");
+        jPanel3.add(lblTítuloFichaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, 80));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 100));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 610));
 
         tblListaCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,34 +238,102 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaCompras);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 700, 430));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 700, 410));
 
-        lblTítuloListaCompras.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
+
+        lblTítuloListaCompras.setFont(new java.awt.Font("Segoe UI Black", 1, 60)); // NOI18N
         lblTítuloListaCompras.setForeground(new java.awt.Color(255, 255, 255));
         lblTítuloListaCompras.setText("LISTA DE COMPRAS");
-        jPanel1.add(lblTítuloListaCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(lblTítuloListaCompras)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(lblTítuloListaCompras)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, 100));
+
+        btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
+        btnDes.setText("Descargar");
+        btnDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, 190, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1330, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesActionPerformed
+        try {
+            tblListaCompras.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(VFichaCompra.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnDesActionPerformed
+
+    private void txt_IdCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_IdCompraKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txt_IdCompraKeyTyped
+
+    private void txt_IdUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_IdUsuarioKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txt_IdUsuarioKeyTyped
+
+    private void txt_IdProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_IdProveedorKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txt_IdProveedorKeyTyped
+
+    private void txtEstadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEstadoKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+    }//GEN-LAST:event_txtEstadoKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnDes;
     public javax.swing.JButton btnEliminar;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -241,7 +342,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblIconoFichaCompra;
     private javax.swing.JLabel lblTítuloFichaCompra;
     private javax.swing.JLabel lblTítuloListaCompras;
     private javax.swing.JLabel lbl_IdCompra;

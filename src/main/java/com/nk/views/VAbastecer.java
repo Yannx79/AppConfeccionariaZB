@@ -21,6 +21,8 @@ public class VAbastecer extends javax.swing.JInternalFrame {
     public VAbastecer() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,6 +82,11 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         txtNombre.setForeground(new java.awt.Color(250, 250, 250));
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
@@ -106,6 +113,11 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         txtDescripcion.setForeground(new java.awt.Color(250, 250, 250));
         txtDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDescripcion.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtDescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDescripcionKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
@@ -117,6 +129,11 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         txtPrecio.setForeground(new java.awt.Color(250, 250, 250));
         txtPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtPrecio.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
@@ -128,6 +145,11 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         txtStock.setForeground(new java.awt.Color(250, 250, 250));
         txtStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtStock.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtStock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtStockKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
@@ -144,6 +166,11 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         txtDescuento.setForeground(new java.awt.Color(250, 250, 250));
         txtDescuento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDescuento.setCaretColor(new java.awt.Color(220, 95, 0));
+        txtDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDescuentoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jSeparator6.setBackground(new java.awt.Color(54, 57, 63));
@@ -153,7 +180,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
         btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -173,7 +199,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
         btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -188,7 +213,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -203,7 +227,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         btnListar.setBackground(new java.awt.Color(54, 57, 63));
         btnListar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
-        btnListar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnListar.setText("Listar");
         btnListar.setBorder(null);
         btnListar.setContentAreaFilled(false);
@@ -223,7 +246,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
         btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -237,8 +259,6 @@ public class VAbastecer extends javax.swing.JInternalFrame {
 
         jPanel3.setBackground(new java.awt.Color(26, 36, 140));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\carretilla.png")); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 80));
 
         lblTítuloNewInsumo.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
@@ -285,13 +305,12 @@ public class VAbastecer extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTítuloListaInsumos)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, -1));
 
         btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
         btnDes.setText("Descargar");
         btnDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -330,7 +349,40 @@ public class VAbastecer extends javax.swing.JInternalFrame {
         } catch (PrinterException ex) {
             Logger.getLogger(VAbastecer.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }//GEN-LAST:event_btnDesActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' '))
+            evt.consume();
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtDescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyTyped
+
+    }//GEN-LAST:event_txtDescripcionKeyTyped
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtStockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtStockKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtStockKeyTyped
+
+    private void txtDescuentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescuentoKeyTyped
+    char c = evt.getKeyChar();
+        if (c < '0' || c > '9')
+            evt.consume();
+
+    }//GEN-LAST:event_txtDescuentoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
