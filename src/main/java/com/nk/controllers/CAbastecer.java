@@ -164,7 +164,9 @@ public class CAbastecer implements ActionListener{
         bo.setInsumoDAO(insDAO);
         L_insumos = bo.listar();
         for(int i=0;i<L_insumos.size();i++){
-                 modelo.addRow(L_insumos.get(i).Registro());
+            if(L_insumos.get(i).getEstado()== 1){
+               modelo.addRow(L_insumos.get(i).Registro());
+            }
         } 
     }
     
