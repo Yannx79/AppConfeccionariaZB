@@ -11,7 +11,5 @@ public class App {
     public static void main(String[] args) {
         vista = new VMenu();
         controlador = new CMenu(vista);
-    }
-    
-   
+    }   
 }
