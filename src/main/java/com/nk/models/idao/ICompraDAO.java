@@ -9,10 +9,8 @@ public interface ICompraDAO<T, K> extends IObjectDAO<T, K> {
             + "(?, ?, ?, ?, ?, ?)";
     public static final String SQL_READ = "SELECT * FROM `compra` WHERE `id_compra` = ?";
     public static final String SQL_READ_ALL = "SELECT * FROM `compra` WHERE 1";
-    public static final String SQL_UPDATE = "UPDATE `compra` SET `id_proveedor`=?,"
-            + "`id_usuario`=?,`total`=?,`fecha`=?,"
-            + "`impuesto`=?,`estado`=?" 
-            + " WHERE `id_compra`=?";
+    public static final String SQL_UPDATE = "UPDATE `compra` SET `estado`=? "
+            + "WHERE `id_compra`=?";
     public static final String SQL_DELETE = "UPDATE `compra` SET `estado` = 0 "
             + "WHERE `id_compra`=?";
     public static final Conexion CONEXION = Conexion.getConexion();

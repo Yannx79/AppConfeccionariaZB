@@ -87,13 +87,8 @@ public class CompraDAO implements ICompraDAO<CompraDTO, Integer> {
         Connection connection = CONEXION.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_UPDATE);
-            ps.setInt(1, t.getId_proveedor());
-            ps.setInt(2, t.getId_usuario());
-            ps.setDouble(3, t.getTotal());
-            ps.setString(4, t.getFecha());
-            ps.setDouble(5, t.getImpuesto());
-            ps.setInt(6, t.getEstado());
-            ps.setInt(7, t.getId_compra());
+            ps.setInt(1, t.getEstado());
+            ps.setInt(2, t.getId_compra());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error CompraDAO: " + e);

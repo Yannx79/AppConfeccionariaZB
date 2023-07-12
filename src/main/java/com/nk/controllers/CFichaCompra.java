@@ -43,6 +43,16 @@ public class CFichaCompra implements ActionListener {
             comDTO = new CompraDTO();
             codCompra = ConsultarCompra(comDTO,comBO);
             ActivarUPDEL(frame);
+            DesactivarTXTs(frame);
+        }
+        if(e.getSource() == frame.btnActualizar){
+            comDTO = new CompraDTO();
+            if(frame.tblListaCompras.getRowCount() != 0){
+                Listar(comDTO,comBO);
+            }
+            DesactivarUPDEL(frame);
+            LimpiarEntradas(frame);
+            codCompra = 0;
         }
     }
     
@@ -84,6 +94,19 @@ public class CFichaCompra implements ActionListener {
         vista.btnConsultar.setEnabled(true);        
     }
     
+    public void DesactivarTXTs (VFichaCompra vista){
+        vista.txt_IdCompra.setEnabled(false);
+        vista.txt_IdProveedor.setEnabled(false);
+        vista.txt_IdUsuario.setEnabled(false);
+        vista.txtFecha.setEnabled(false);
+    }
+    public void ActivarTXTs (VFichaCompra vista){
+        vista.txt_IdCompra.setEnabled(true);
+        vista.txt_IdProveedor.setEnabled(true);
+        vista.txt_IdUsuario.setEnabled(true);
+        vista.txtFecha.setEnabled(true);
+    }
+    
     public void Listar(CompraDTO dto, CompraBO bo){
         if(frame.tblListaCompras.getRowCount() != 0){
         for(int i=frame.tblListaCompras.getRowCount()-1;i>=0;i--){
@@ -112,6 +135,14 @@ public class CFichaCompra implements ActionListener {
         frame.txtFecha.setText(dto.getFecha());
         frame.txtEstado.setText(String.valueOf(dto.getEstado()));
         return dto.getId_compra();
+    }
+    
+    public void Actualizar(CompraDTO dto, CompraBO bo,int codCom){
+        comDAO = new CompraDAO(); 
+        bo.setCompraDAO(comDAO);
+        dto.setId_compra(codCom);
+        dto.setEstado(Integer.parseInt(frame.txtEstado.getText()));
+        bo.actualizar(dto);        
     }
    
     
