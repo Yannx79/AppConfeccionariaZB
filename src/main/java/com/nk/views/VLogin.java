@@ -57,7 +57,6 @@ public class VLogin extends javax.swing.JInternalFrame {
         jPanel1.add(lblLogoReducido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 46, 41));
 
         lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\logo.png")); // NOI18N
         lblFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 620));
 

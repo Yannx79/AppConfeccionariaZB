@@ -55,6 +55,9 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnVerInsumos = new javax.swing.JButton();
         btnVerCompras = new javax.swing.JButton();
 
+        setClosable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel1.setBackground(new java.awt.Color(26, 36, 140));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,7 +114,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
         btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -195,7 +197,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnComprar.setBackground(new java.awt.Color(54, 57, 63));
         btnComprar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnComprar.setForeground(new java.awt.Color(255, 255, 255));
-        btnComprar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\compra.png")); // NOI18N
         btnComprar.setText("Comprar");
         btnComprar.setBorder(null);
         btnComprar.setContentAreaFilled(false);
@@ -210,7 +211,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnAgregar.setBackground(new java.awt.Color(54, 57, 63));
         btnAgregar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.setBorder(null);
         btnAgregar.setContentAreaFilled(false);
@@ -229,7 +229,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         lblTítuloFichaCompra.setText("COMPRA DE VENTA");
         jPanel1.add(lblTítuloFichaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, -1, 90));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\camion-reparto.png")); // NOI18N
         jLabel2.setToolTipText("");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 100));
 
@@ -238,7 +237,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnVerInsumos.setBackground(new java.awt.Color(204, 204, 204));
         btnVerInsumos.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnVerInsumos.setForeground(new java.awt.Color(255, 255, 255));
-        btnVerInsumos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnVerInsumos.setText("Ver insumos");
         btnVerInsumos.setBorder(null);
         btnVerInsumos.setContentAreaFilled(false);
@@ -252,7 +250,6 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnVerCompras.setBackground(new java.awt.Color(204, 204, 204));
         btnVerCompras.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnVerCompras.setForeground(new java.awt.Color(255, 255, 255));
-        btnVerCompras.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnVerCompras.setText("Ver compras");
         btnVerCompras.setBorder(null);
         btnVerCompras.setContentAreaFilled(false);
@@ -286,19 +283,7 @@ public class VCompras extends javax.swing.JInternalFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 660, 90));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 13, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

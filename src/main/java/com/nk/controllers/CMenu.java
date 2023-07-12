@@ -9,6 +9,7 @@ import com.nk.views.VMenu;
 
 import com.nk.views.VAbastecer;//Manejo de frame de forma externa
 import com.nk.views.VCliente;//Manejo de frame de forma externa
+import com.nk.views.VCompras;
 import com.nk.views.VProveedor;//Manejo de frame de forma externa
 import com.nk.views.VMovimientoI;
 import com.nk.views.VVenta;
@@ -54,6 +55,7 @@ public class CMenu implements ActionListener {
         this.vista.jmiVenta.addActionListener(this);
         this.vista.miLogin.addActionListener(this);
         this.vista.miLogout.addActionListener(this);
+        this.vista.jmiCompras.addActionListener(this);
     }
 
     @Override
@@ -72,9 +74,17 @@ public class CMenu implements ActionListener {
             this.actionPerformedLogin();
         } else if (e.getSource() == this.vista.miLogout) {
             this.actionPerformedLogout();
+        } else if (e.getSource() == this.vista.jmiCompras) {
+            this.actionPerformedCompra();
         }
     }
 
+    private void actionPerformedCompra() {
+        VCompras vCompras = new VCompras();
+        CCompras cCompras = new CCompras(vCompras);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vCompras);
+    }
+    
     private void actionPerformedVenta() {
         VVenta vVenta = new VVenta();
         CVenta cVenta = new CVenta(vVenta);
