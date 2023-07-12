@@ -34,8 +34,8 @@ public class VCompras extends javax.swing.JInternalFrame {
         lbl_IdProveedor = new javax.swing.JLabel();
         txt_IdProveedor = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        lblTítuloNewCompra1 = new javax.swing.JLabel();
-        btnRegistrar1 = new javax.swing.JButton();
+        lblTítuloNewCompra = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lblTítulo2NewCompra = new javax.swing.JLabel();
         lbl_IdInsumo = new javax.swing.JLabel();
@@ -48,7 +48,7 @@ public class VCompras extends javax.swing.JInternalFrame {
         txtPrecio = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         btnComprar = new javax.swing.JButton();
-        btnAgregar1 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         lbl_IconoCompra = new javax.swing.JLabel();
         btnVerInsumos = new javax.swing.JButton();
         btnVerCompras = new javax.swing.JButton();
@@ -91,24 +91,24 @@ public class VCompras extends javax.swing.JInternalFrame {
         jSeparator2.setForeground(new java.awt.Color(54, 57, 63));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 190, 10));
 
-        lblTítuloNewCompra1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewCompra1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewCompra1.setText("ACTORES");
-        jPanel2.add(lblTítuloNewCompra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        lblTítuloNewCompra.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        lblTítuloNewCompra.setForeground(new java.awt.Color(255, 255, 255));
+        lblTítuloNewCompra.setText("ACTORES");
+        jPanel2.add(lblTítuloNewCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
-        btnRegistrar1.setBackground(new java.awt.Color(54, 57, 63));
-        btnRegistrar1.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnRegistrar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar1.setText("Registrar");
-        btnRegistrar1.setBorder(null);
-        btnRegistrar1.setContentAreaFilled(false);
-        btnRegistrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegistrar1.setFocusPainted(false);
-        btnRegistrar1.setFocusable(false);
-        btnRegistrar1.setOpaque(true);
-        btnRegistrar1.setRequestFocusEnabled(false);
-        btnRegistrar1.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 130, 50));
+        btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
+        btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.setBorder(null);
+        btnRegistrar.setContentAreaFilled(false);
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrar.setFocusPainted(false);
+        btnRegistrar.setFocusable(false);
+        btnRegistrar.setOpaque(true);
+        btnRegistrar.setRequestFocusEnabled(false);
+        btnRegistrar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 130, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 440));
 
@@ -178,19 +178,19 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnComprar.setVerifyInputWhenFocusTarget(false);
         jPanel3.add(btnComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 130, 50));
 
-        btnAgregar1.setBackground(new java.awt.Color(54, 57, 63));
-        btnAgregar1.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnAgregar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar1.setText("Agregar");
-        btnAgregar1.setBorder(null);
-        btnAgregar1.setContentAreaFilled(false);
-        btnAgregar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregar1.setFocusPainted(false);
-        btnAgregar1.setFocusable(false);
-        btnAgregar1.setOpaque(true);
-        btnAgregar1.setRequestFocusEnabled(false);
-        btnAgregar1.setVerifyInputWhenFocusTarget(false);
-        jPanel3.add(btnAgregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 130, 50));
+        btnAgregar.setBackground(new java.awt.Color(54, 57, 63));
+        btnAgregar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setBorder(null);
+        btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregar.setFocusPainted(false);
+        btnAgregar.setFocusable(false);
+        btnAgregar.setOpaque(true);
+        btnAgregar.setRequestFocusEnabled(false);
+        btnAgregar.setVerifyInputWhenFocusTarget(false);
+        jPanel3.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 130, 50));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 420, 440));
 
@@ -250,9 +250,9 @@ public class VCompras extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAgregar1;
+    public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnComprar;
-    public javax.swing.JButton btnRegistrar1;
+    public javax.swing.JButton btnRegistrar;
     public javax.swing.JButton btnVerCompras;
     public javax.swing.JButton btnVerInsumos;
     private javax.swing.JPanel jPanel1;
@@ -266,7 +266,7 @@ public class VCompras extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblTítulo2NewCompra;
-    private javax.swing.JLabel lblTítuloNewCompra1;
+    private javax.swing.JLabel lblTítuloNewCompra;
     private javax.swing.JLabel lbl_IconoCompra;
     private javax.swing.JLabel lbl_IdInsumo;
     private javax.swing.JLabel lbl_IdProveedor;
