@@ -58,6 +58,8 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         lblTítuloListaCompras = new javax.swing.JLabel();
         btnDes = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -167,7 +169,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
         btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -182,7 +183,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -197,7 +197,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
         btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 1, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -212,7 +211,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(26, 36, 140));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\camion-reparto.png")); // NOI18N
         jLabel2.setToolTipText("");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 100));
 
@@ -258,7 +256,7 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTítuloListaCompras)
                 .addContainerGap())
         );
@@ -266,7 +264,6 @@ public class VFichaCompra extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, 100));
 
         btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
         btnDes.setText("Descargar");
         btnDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
