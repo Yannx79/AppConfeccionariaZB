@@ -4,6 +4,10 @@
  */
 package com.nk.views;
 
+import java.awt.print.PrinterException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Pc
@@ -29,7 +33,6 @@ public class VCliente extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
-        lblNombres = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lblApellPa = new javax.swing.JLabel();
         txtApellPa = new javax.swing.JTextField();
@@ -43,113 +46,108 @@ public class VCliente extends javax.swing.JInternalFrame {
         lblTelefono = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        lblTítuloNewCliente = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        lblIconoCliente = new javax.swing.JLabel();
-        lblTituloListaClientes = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblTítuloNewInsumo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaClientes = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        lblTituloListaClientes = new javax.swing.JLabel();
+        btnDes = new javax.swing.JButton();
 
         setClosable(true);
 
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(88, 101, 242));
+        jPanel2.setBackground(new java.awt.Color(77, 90, 225));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombre.setBackground(new java.awt.Color(88, 101, 242));
         txtNombre.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtNombre.setForeground(new java.awt.Color(250, 250, 250));
-        txtNombre.setBorder(null);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtNombre.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 300, 40));
-
-        lblNombres.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        lblNombres.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombres.setText("Nombres");
-        jPanel2.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
         jSeparator1.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator1.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 300, 10));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, 10));
 
-        lblApellPa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        lblApellPa.setFont(new java.awt.Font("Gotham Thin", 1, 18)); // NOI18N
         lblApellPa.setForeground(new java.awt.Color(255, 255, 255));
         lblApellPa.setText("Apellido Paterno");
-        jPanel2.add(lblApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        jPanel2.add(lblApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
 
         txtApellPa.setBackground(new java.awt.Color(88, 101, 242));
         txtApellPa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtApellPa.setForeground(new java.awt.Color(250, 250, 250));
-        txtApellPa.setBorder(null);
+        txtApellPa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtApellPa.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 300, 40));
+        jPanel2.add(txtApellPa, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 200, 40));
 
         jSeparator2.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator2.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 300, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 200, 10));
 
-        lblApellMa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        lblApellMa.setFont(new java.awt.Font("Gotham Thin", 1, 18)); // NOI18N
         lblApellMa.setForeground(new java.awt.Color(255, 255, 255));
         lblApellMa.setText("Apellido Materno");
-        jPanel2.add(lblApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        jPanel2.add(lblApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         txtApellMa.setBackground(new java.awt.Color(88, 101, 242));
         txtApellMa.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtApellMa.setForeground(new java.awt.Color(250, 250, 250));
-        txtApellMa.setBorder(null);
+        txtApellMa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtApellMa.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 300, 40));
+        jPanel2.add(txtApellMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jSeparator3.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator3.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 300, 10));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 10));
 
-        lblDNI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        lblDNI.setFont(new java.awt.Font("Gotham Thin", 1, 18)); // NOI18N
         lblDNI.setForeground(new java.awt.Color(255, 255, 255));
         lblDNI.setText("DNI");
-        jPanel2.add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        jPanel2.add(lblDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
 
         txtDNI.setBackground(new java.awt.Color(88, 101, 242));
         txtDNI.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtDNI.setForeground(new java.awt.Color(250, 250, 250));
-        txtDNI.setBorder(null);
+        txtDNI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtDNI.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 300, 40));
+        jPanel2.add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
         jSeparator4.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator4.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 300, 10));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 200, 10));
 
-        lblTelefono.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        lblTelefono.setFont(new java.awt.Font("Gotham Thin", 1, 18)); // NOI18N
         lblTelefono.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefono.setText("Teléfono");
-        jPanel2.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+        jPanel2.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         txtTelefono.setBackground(new java.awt.Color(88, 101, 242));
         txtTelefono.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(250, 250, 250));
-        txtTelefono.setBorder(null);
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtTelefono.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 300, 40));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 190, 40));
 
         jSeparator5.setBackground(new java.awt.Color(54, 57, 63));
         jSeparator5.setForeground(new java.awt.Color(54, 57, 63));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 300, 10));
-
-        lblTítuloNewCliente.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewCliente.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewCliente.setText("NUEVO CLIENTE");
-        jPanel2.add(lblTítuloNewCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 190, 10));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
-        btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -159,11 +157,12 @@ public class VCliente extends javax.swing.JInternalFrame {
         btnEliminar.setOpaque(true);
         btnEliminar.setRequestFocusEnabled(false);
         btnEliminar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, 130, 50));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 150, 70));
 
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
-        btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -173,11 +172,12 @@ public class VCliente extends javax.swing.JInternalFrame {
         btnRegistrar.setOpaque(true);
         btnRegistrar.setRequestFocusEnabled(false);
         btnRegistrar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 130, 50));
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 160, 70));
 
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
-        btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnConsultar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -187,11 +187,12 @@ public class VCliente extends javax.swing.JInternalFrame {
         btnConsultar.setOpaque(true);
         btnConsultar.setRequestFocusEnabled(false);
         btnConsultar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 130, 50));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 160, 70));
 
         btnListar.setBackground(new java.awt.Color(54, 57, 63));
-        btnListar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnListar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
+        btnListar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnListar.setText("Listar");
         btnListar.setBorder(null);
         btnListar.setContentAreaFilled(false);
@@ -201,11 +202,12 @@ public class VCliente extends javax.swing.JInternalFrame {
         btnListar.setOpaque(true);
         btnListar.setRequestFocusEnabled(false);
         btnListar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 600, 130, 50));
+        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 150, 70));
 
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
-        btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -215,20 +217,32 @@ public class VCliente extends javax.swing.JInternalFrame {
         btnActualizar.setOpaque(true);
         btnActualizar.setRequestFocusEnabled(false);
         btnActualizar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 130, 50));
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 160, 70));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 430, 730));
+        jPanel3.setBackground(new java.awt.Color(26, 36, 140));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblIconoCliente.setBackground(new java.awt.Color(54, 57, 63));
-        lblIconoCliente.setForeground(new java.awt.Color(255, 255, 255));
-        lblIconoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconoCliente.setText("(colocar icono cliente - editar luego)");
-        jPanel1.add(lblIconoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 180));
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\caja-de-entrega.png")); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 80));
 
-        lblTituloListaClientes.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTituloListaClientes.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloListaClientes.setText("LISTA DE CLIENTES");
-        jPanel1.add(lblTituloListaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, -1, -1));
+        lblTítuloNewInsumo.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        lblTítuloNewInsumo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTítuloNewInsumo.setText("NUEVO CLIENTE");
+        jPanel3.add(lblTítuloNewInsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, 50));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 100));
+
+        lblNombre.setFont(new java.awt.Font("Gotham Thin", 1, 18)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setText("Nombres");
+        jPanel2.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 730));
 
         tblListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -243,31 +257,84 @@ public class VCliente extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaClientes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 520, 430));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 700, 390));
+
+        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
+
+        lblTituloListaClientes.setFont(new java.awt.Font("Segoe UI Black", 1, 55)); // NOI18N
+        lblTituloListaClientes.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloListaClientes.setText("LISTA DE CLIENTES");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(106, Short.MAX_VALUE)
+                .addComponent(lblTituloListaClientes)
+                .addGap(95, 95, 95))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTituloListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, 100));
+
+        btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
+        btnDes.setText("Descargar");
+        btnDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 530, 190, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1228, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesActionPerformed
+        try {
+            tblListaClientes.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(VCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnDesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnDes;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnListar;
     public javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -277,11 +344,10 @@ public class VCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblApellMa;
     private javax.swing.JLabel lblApellPa;
     private javax.swing.JLabel lblDNI;
-    private javax.swing.JLabel lblIconoCliente;
-    private javax.swing.JLabel lblNombres;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTituloListaClientes;
-    private javax.swing.JLabel lblTítuloNewCliente;
+    private javax.swing.JLabel lblTítuloNewInsumo;
     public javax.swing.JTable tblListaClientes;
     public javax.swing.JTextField txtApellMa;
     public javax.swing.JTextField txtApellPa;

@@ -5,6 +5,10 @@
  */
 package com.nk.views;
 
+import java.awt.print.PrinterException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author USUARIO
@@ -29,8 +33,6 @@ public class VVenta extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        lblIconoVenta = new javax.swing.JLabel();
-        lblTítuloNewVenta = new javax.swing.JLabel();
         lblId_usuario = new javax.swing.JLabel();
         txtId_usuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -48,9 +50,14 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblTítuloNewInsumo = new javax.swing.JLabel();
+        lblIconoVenta = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListaVentas = new javax.swing.JTable();
-        lblTítuloListaVentas = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblTituloListaClientes = new javax.swing.JLabel();
+        btnDes = new javax.swing.JButton();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -58,19 +65,8 @@ public class VVenta extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(88, 101, 242));
+        jPanel2.setBackground(new java.awt.Color(77, 90, 225));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIconoVenta.setBackground(new java.awt.Color(88, 101, 242));
-        lblIconoVenta.setForeground(new java.awt.Color(255, 255, 255));
-        lblIconoVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconoVenta.setText("(colocar icono Venta - editar luego)");
-        jPanel2.add(lblIconoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 90, 80));
-
-        lblTítuloNewVenta.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloNewVenta.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewVenta.setText("NUEVA VENTA");
-        jPanel2.add(lblTítuloNewVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, 50));
 
         lblId_usuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         lblId_usuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,7 +76,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtId_usuario.setBackground(new java.awt.Color(88, 101, 242));
         txtId_usuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtId_usuario.setForeground(new java.awt.Color(250, 250, 250));
-        txtId_usuario.setBorder(null);
+        txtId_usuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtId_usuario.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtId_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 190, 40));
 
@@ -101,7 +97,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtId_cliente.setBackground(new java.awt.Color(88, 101, 242));
         txtId_cliente.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtId_cliente.setForeground(new java.awt.Color(250, 250, 250));
-        txtId_cliente.setBorder(null);
+        txtId_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtId_cliente.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtId_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
@@ -112,7 +108,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtTotal.setBackground(new java.awt.Color(88, 101, 242));
         txtTotal.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtTotal.setForeground(new java.awt.Color(250, 250, 250));
-        txtTotal.setBorder(null);
+        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtTotal.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 190, 40));
 
@@ -128,7 +124,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         txtImpuesto.setBackground(new java.awt.Color(88, 101, 242));
         txtImpuesto.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtImpuesto.setForeground(new java.awt.Color(250, 250, 250));
-        txtImpuesto.setBorder(null);
+        txtImpuesto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(88, 101, 242), 7));
         txtImpuesto.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtImpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 200, 40));
 
@@ -139,6 +135,7 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
         btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -148,11 +145,12 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnRegistrar.setOpaque(true);
         btnRegistrar.setRequestFocusEnabled(false);
         btnRegistrar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 130, 50));
+        jPanel2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 160, 70));
 
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
         btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -162,11 +160,12 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnActualizar.setOpaque(true);
         btnActualizar.setRequestFocusEnabled(false);
         btnActualizar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 130, 50));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 160, 70));
 
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -176,11 +175,12 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnEliminar.setOpaque(true);
         btnEliminar.setRequestFocusEnabled(false);
         btnEliminar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 130, 50));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 140, 70));
 
         btnListar.setBackground(new java.awt.Color(54, 57, 63));
         btnListar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
+        btnListar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnListar.setText("Listar");
         btnListar.setBorder(null);
         btnListar.setContentAreaFilled(false);
@@ -190,11 +190,12 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnListar.setOpaque(true);
         btnListar.setRequestFocusEnabled(false);
         btnListar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 130, 50));
+        jPanel2.add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 140, 70));
 
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
         btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -204,9 +205,25 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnConsultar.setOpaque(true);
         btnConsultar.setRequestFocusEnabled(false);
         btnConsultar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 130, 50));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 160, 70));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 730));
+        jPanel3.setBackground(new java.awt.Color(26, 36, 140));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTítuloNewInsumo.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
+        lblTítuloNewInsumo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTítuloNewInsumo.setText("NUEVO VENTA");
+        jPanel3.add(lblTítuloNewInsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, 50));
+
+        lblIconoVenta.setBackground(new java.awt.Color(88, 101, 242));
+        lblIconoVenta.setForeground(new java.awt.Color(255, 255, 255));
+        lblIconoVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconoVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\estante.png")); // NOI18N
+        jPanel3.add(lblIconoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 80));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 100));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 730));
 
         tblListaVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -221,36 +238,74 @@ public class VVenta extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblListaVentas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 580, 430));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 680, 410));
 
-        lblTítuloListaVentas.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        lblTítuloListaVentas.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloListaVentas.setText("LISTA DE VENTAS");
-        jPanel1.add(lblTítuloListaVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, -1, -1));
+        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
+
+        lblTituloListaClientes.setFont(new java.awt.Font("Segoe UI Black", 1, 55)); // NOI18N
+        lblTituloListaClientes.setForeground(new java.awt.Color(255, 255, 255));
+        lblTituloListaClientes.setText("LISTA DE VENTAS");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(lblTituloListaClientes)
+                .addGap(115, 115, 115))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTituloListaClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, 100));
+
+        btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
+        btnDes.setText("Descargar");
+        btnDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 530, 190, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1271, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesActionPerformed
+        try {
+            tblListaVentas.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(VVenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnDesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnDes;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnListar;
     public javax.swing.JButton btnRegistrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -260,9 +315,9 @@ public class VVenta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblId_cliente;
     private javax.swing.JLabel lblId_usuario;
     private javax.swing.JLabel lblImpuesto;
+    private javax.swing.JLabel lblTituloListaClientes;
     private javax.swing.JLabel lblTotal;
-    private javax.swing.JLabel lblTítuloListaVentas;
-    private javax.swing.JLabel lblTítuloNewVenta;
+    private javax.swing.JLabel lblTítuloNewInsumo;
     public javax.swing.JTable tblListaVentas;
     public javax.swing.JTextField txtId_cliente;
     public javax.swing.JTextField txtId_usuario;
