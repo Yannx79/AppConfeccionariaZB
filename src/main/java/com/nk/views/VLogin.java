@@ -25,7 +25,6 @@ public class VLogin extends javax.swing.JInternalFrame {
 
         bgUser = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        lblBannerLogo = new javax.swing.JLabel();
         lblLogoCentro = new javax.swing.JLabel();
         lblLogoReducido = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
@@ -50,9 +49,6 @@ public class VLogin extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(250, 250, 250));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBannerLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(lblBannerLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 340, 400));
-
         lblLogoCentro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblLogoCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 278, 241));
 
@@ -61,6 +57,7 @@ public class VLogin extends javax.swing.JInternalFrame {
         jPanel1.add(lblLogoReducido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 46, 41));
 
         lblFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\logo.png")); // NOI18N
         lblFondo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 620));
 
@@ -101,16 +98,16 @@ public class VLogin extends javax.swing.JInternalFrame {
         txtEmail.setBackground(new java.awt.Color(33, 45, 62));
         txtEmail.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(250, 250, 250));
-        txtEmail.setBorder(null);
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(33, 45, 62), 7));
         txtEmail.setCaretColor(new java.awt.Color(220, 95, 0));
         jPanel2.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 270, 40));
 
         txtPassword.setBackground(new java.awt.Color(33, 45, 62));
         txtPassword.setFont(txtPassword.getFont().deriveFont(txtPassword.getFont().getSize()+7f));
         txtPassword.setForeground(new java.awt.Color(250, 250, 250));
-        txtPassword.setBorder(null);
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(33, 45, 62), 7));
         txtPassword.setCaretColor(new java.awt.Color(220, 95, 0));
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 36));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 270, 40));
 
         jSeparator1.setBackground(new java.awt.Color(207, 10, 10));
         jSeparator1.setForeground(new java.awt.Color(220, 95, 0));
@@ -164,7 +161,6 @@ public class VLogin extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JLabel lblBannerLogo;
     public javax.swing.JLabel lblFondo;
     public javax.swing.JLabel lblLogoCentro;
     public javax.swing.JLabel lblLogoReducido;

@@ -40,6 +40,8 @@ public class VMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        desktopMenu.setBackground(new java.awt.Color(153, 153, 153));
+
         javax.swing.GroupLayout desktopMenuLayout = new javax.swing.GroupLayout(desktopMenu);
         desktopMenu.setLayout(desktopMenuLayout);
         desktopMenuLayout.setHorizontalGroup(
