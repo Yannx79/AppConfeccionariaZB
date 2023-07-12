@@ -232,7 +232,7 @@ public class VVenta extends javax.swing.JInternalFrame {
 
         lblTítuloNewInsumo.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
         lblTítuloNewInsumo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloNewInsumo.setText("NUEVO VENTA");
+        lblTítuloNewInsumo.setText("NUEVA VENTA");
         jPanel3.add(lblTítuloNewInsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, 50));
 
         lblIconoVenta.setBackground(new java.awt.Color(88, 101, 242));
