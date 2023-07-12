@@ -30,6 +30,7 @@ public class CFichaCompra implements ActionListener {
         AgregarBotones(frame);
         frame.btnActualizar.setEnabled(false);
         frame.btnEliminar.setEnabled(false);
+        DesactivarTXTs(frame);
         modelo = PonerCabeceras(frame.tblListaCompras);
         comBO = new CompraBO();
         comDTO = new CompraDTO();
@@ -43,10 +44,19 @@ public class CFichaCompra implements ActionListener {
             comDTO = new CompraDTO();
             codCompra = ConsultarCompra(comDTO,comBO);
             ActivarUPDEL(frame);
-            DesactivarTXTs(frame);
         }
         if(e.getSource() == frame.btnActualizar){
             comDTO = new CompraDTO();
+            if(frame.tblListaCompras.getRowCount() != 0){
+                Listar(comDTO,comBO);
+            }
+            DesactivarUPDEL(frame);
+            LimpiarEntradas(frame);
+            codCompra = 0;
+        }
+        if(e.getSource() == frame.btnEliminar){
+            comDTO = new CompraDTO();
+            Eliminar(comDTO,comBO,codCompra);
             if(frame.tblListaCompras.getRowCount() != 0){
                 Listar(comDTO,comBO);
             }
@@ -100,12 +110,6 @@ public class CFichaCompra implements ActionListener {
         vista.txt_IdUsuario.setEnabled(false);
         vista.txtFecha.setEnabled(false);
     }
-    public void ActivarTXTs (VFichaCompra vista){
-        vista.txt_IdCompra.setEnabled(true);
-        vista.txt_IdProveedor.setEnabled(true);
-        vista.txt_IdUsuario.setEnabled(true);
-        vista.txtFecha.setEnabled(true);
-    }
     
     public void Listar(CompraDTO dto, CompraBO bo){
         if(frame.tblListaCompras.getRowCount() != 0){
@@ -117,7 +121,7 @@ public class CFichaCompra implements ActionListener {
         bo.setCompraDAO(comDAO);
         L_compras = bo.listar();
         for(int i=0;i<L_compras.size();i++){
-            if(L_compras.get(i).getEstado()== 1){
+            if(L_compras.get(i).getEstado()== 1 || L_compras.get(i).getEstado()== 2){
                modelo.addRow(L_compras.get(i).Registro());
             }
         } 
@@ -144,6 +148,13 @@ public class CFichaCompra implements ActionListener {
         dto.setEstado(Integer.parseInt(frame.txtEstado.getText()));
         bo.actualizar(dto);        
     }
+    
+    public void Eliminar(CompraDTO dto, CompraBO bo, int codCom){
+       comDAO = new CompraDAO();
+       bo.setCompraDAO(comDAO);
+       bo.eliminar(codCom);       
+   }
+    
    
     
 }
