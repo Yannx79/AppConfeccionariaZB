@@ -47,6 +47,7 @@ public class CFichaCompra implements ActionListener {
         }
         if(e.getSource() == frame.btnActualizar){
             comDTO = new CompraDTO();
+            Actualizar(comDTO,comBO,codCompra);
             if(frame.tblListaCompras.getRowCount() != 0){
                 Listar(comDTO,comBO);
             }
