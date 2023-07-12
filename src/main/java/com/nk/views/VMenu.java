@@ -32,6 +32,7 @@ public class VMenu extends javax.swing.JFrame {
         miLogout = new javax.swing.JMenuItem();
         miLogin = new javax.swing.JMenuItem();
         jmOperaciones = new javax.swing.JMenu();
+        jmiCompras = new javax.swing.JMenuItem();
         jmiMovimientosInternos = new javax.swing.JMenuItem();
         jmiAbastecer = new javax.swing.JMenuItem();
         jmiVenta = new javax.swing.JMenuItem();
@@ -64,6 +65,9 @@ public class VMenu extends javax.swing.JFrame {
         jMenuBar1.add(jmHome);
 
         jmOperaciones.setText("Operaciones");
+
+        jmiCompras.setText("Compras");
+        jmOperaciones.add(jmiCompras);
 
         jmiMovimientosInternos.setText("Movimientos Internos");
         jmiMovimientosInternos.addActionListener(new java.awt.event.ActionListener() {
@@ -179,6 +183,7 @@ public class VMenu extends javax.swing.JFrame {
     public javax.swing.JMenu jmOperaciones;
     public javax.swing.JMenuItem jmiAbastecer;
     public javax.swing.JMenuItem jmiCliente;
+    public javax.swing.JMenuItem jmiCompras;
     public javax.swing.JMenuItem jmiMovimientosInternos;
     public javax.swing.JMenuItem jmiProveedor;
     public javax.swing.JMenuItem jmiVenta;

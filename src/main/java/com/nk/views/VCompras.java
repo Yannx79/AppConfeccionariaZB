@@ -53,6 +53,8 @@ public class VCompras extends javax.swing.JInternalFrame {
         btnVerInsumos = new javax.swing.JButton();
         btnVerCompras = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel1.setBackground(new java.awt.Color(54, 57, 63));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
