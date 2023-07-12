@@ -4,8 +4,8 @@ import com.nk.models.dao.VentaDAO;
 import com.nk.models.dto.VentaDTO;
 import java.util.List;
 
-public class VentaBO implements IBusinessObject<VentaDTO, Integer>{
-    
+public class VentaBO implements IBusinessObject<VentaDTO, Integer> {
+
     private VentaDAO ventaDAO;
 
     @Override
@@ -36,7 +36,5 @@ public class VentaBO implements IBusinessObject<VentaDTO, Integer>{
     public void setVentaDAO(VentaDAO ventaDAO) {
         this.ventaDAO = ventaDAO;
     }
-    
-    
 
 }

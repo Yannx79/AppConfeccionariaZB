@@ -2,21 +2,21 @@ package com.nk.models.dto;
 
 import java.io.Serializable;
 
-public class VentaDTO implements Serializable{
+public class VentaDTO implements Serializable {
 
     //atributos
     private int id_venta;
     private int id_usuario;
     private int id_cliente;
     private double total;
-    private String  fecha;
+    private String fecha;
     private double impuesto;
     private int estado;
-    
+
     //Constructor
     public VentaDTO() {
     }
-    
+
     //Getters y setters
     public int getId_venta() {
         return id_venta;
@@ -78,9 +78,9 @@ public class VentaDTO implements Serializable{
     public String toString() {
         return "VentaDTO{" + "id_venta=" + id_venta + ", id_usuario=" + id_usuario + ", id_cliente=" + id_cliente + ", total=" + total + ", fecha=" + fecha + ", impuesto=" + impuesto + ", estado=" + estado + '}';
     }
-    
-    public Object[] Registro(){
-     Object[] fila = {id_venta,id_usuario,id_cliente,total,fecha,impuesto,estado};
-     return fila;
-    }     
+
+    public Object[] Registro() {
+        Object[] fila = {id_venta, id_usuario, id_cliente, total, fecha, impuesto, estado};
+        return fila;
+    }
 }

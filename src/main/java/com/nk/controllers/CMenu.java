@@ -7,6 +7,7 @@ import com.nk.models.utilities.Desktop;
 import com.nk.views.VLogin;
 import com.nk.views.VMenu;
 import com.nk.views.VAbastecer;
+import com.nk.views.VDetalleVenta;
 import com.nk.views.VMovimientoI;
 import com.nk.views.VVenta;
 //Manejo de frame de forma externa
@@ -47,6 +48,7 @@ public class CMenu implements ActionListener {
         this.vista.jmiMovimientosInternos.addActionListener(this);
         this.vista.jmiProveedor.addActionListener(this);
         this.vista.jmiVenta.addActionListener(this);
+        this.vista.jmiDetalleVenta.addActionListener(this);
         this.vista.miLogin.addActionListener(this);
         this.vista.miLogout.addActionListener(this);
     }
@@ -55,6 +57,8 @@ public class CMenu implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.jmiVenta) {
             this.actionPerformedVenta();
+        } else if (e.getSource() == this.vista.jmiDetalleVenta) {
+            this.actionPerformedDetalleVenta();
         } else if (e.getSource() == this.vista.jmiProveedor) {
             this.actionPerformedProveedor();
         } else if (e.getSource() == this.vista.jmiMovimientosInternos) {
@@ -74,6 +78,12 @@ public class CMenu implements ActionListener {
         VVenta vVenta = new VVenta();
         CVenta cVenta = new CVenta(vVenta);
         Desktop.agregarAlDesktop(this.vista.desktopMenu, vVenta);
+    }
+
+    private void actionPerformedDetalleVenta() {
+        VDetalleVenta vDetalleVenta = new VDetalleVenta();
+        CDetalleVenta cDetalleVenta = new CDetalleVenta(vDetalleVenta);
+        Desktop.agregarAlDesktop(this.vista.desktopMenu, vDetalleVenta);
     }
 
     private void actionPerformedProveedor() {

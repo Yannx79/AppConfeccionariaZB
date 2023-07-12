@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
 
-public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
+public class VentaDAO implements IVentaDAO<VentaDTO, Integer> {
 
     @Override
     public boolean create(VentaDTO t) {
@@ -18,8 +18,7 @@ public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
             PreparedStatement ps = connection.prepareStatement(SQL_CREATE);
             ps.setInt(1, t.getId_usuario());
             ps.setInt(2, t.getId_cliente());
-            ps.setDouble(3, t.getTotal());
-            ps.setDouble(4, t.getImpuesto());
+            ps.setInt(3, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error VentaDAO: " + e);
@@ -88,10 +87,8 @@ public class VentaDAO implements IVentaDAO<VentaDTO, Integer>{
             PreparedStatement ps = connection.prepareStatement(SQL_UPDATE);
             ps.setInt(1, t.getId_usuario());
             ps.setInt(2, t.getId_cliente());
-            ps.setDouble(3, t.getTotal());
-            ps.setDouble(4, t.getImpuesto());
-            ps.setInt(5, t.getEstado());
-            ps.setInt(6, t.getId_venta());
+            ps.setInt(3, t.getEstado());
+            ps.setInt(4, t.getId_venta());
             isUpdate = (ps.executeUpdate() == 1) ? !isUpdate : isUpdate;
         } catch (Exception e) {
             System.out.println("Error VentaDAO: " + e);

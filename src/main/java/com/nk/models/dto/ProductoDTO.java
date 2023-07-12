@@ -2,8 +2,8 @@ package com.nk.models.dto;
 
 import java.io.Serializable;
 
-public class ProductoDTO implements Serializable{
-    
+public class ProductoDTO implements Serializable {
+
     // attributes
     private int idProducto;
     private String nombre;
@@ -105,11 +105,11 @@ public class ProductoDTO implements Serializable{
     public String toString() {
         return "ProductoDTO{" + "idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock + ", estado=" + estado + ", fechaInserccion=" + fechaInserccion + ", fechaActualizacion=" + fechaActualizacion + ", fechaEliminacion=" + fechaEliminacion + ", descuento=" + descuento + '}';
     }
- 
-    public Object[] Registro(){
-     Object[] fila = {idProducto,nombre,descripcion,precio,stock,estado,
-                     fechaInserccion,fechaActualizacion,fechaEliminacion,
-                     descuento};
-     return fila;
-    }   
+
+    public Object[] Registro() {
+        Object[] fila = {idProducto, nombre, descripcion, precio, stock, estado,
+            fechaInserccion, fechaActualizacion, fechaEliminacion,
+            descuento};
+        return fila;
+    }
 }

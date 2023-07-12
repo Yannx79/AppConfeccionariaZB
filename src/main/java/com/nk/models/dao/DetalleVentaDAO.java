@@ -8,9 +8,7 @@ import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
 
-
-public class DetalleVentaDAO implements IDetalleVentaDAO{
-
+public class DetalleVentaDAO implements IDetalleVentaDAO<DetalleVentaDTO, Integer> {
 
     public boolean create(DetalleVentaDTO t) {
         boolean isCreated = false;
@@ -20,7 +18,8 @@ public class DetalleVentaDAO implements IDetalleVentaDAO{
             ps.setInt(1, t.getId_producto());
             ps.setInt(2, t.getId_venta());
             ps.setDouble(3, t.getSubtotal());
-            ps.setDouble(4, t.getCantidad());
+            ps.setInt(4, t.getCantidad());
+            ps.setInt(5, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error DetalleVentaDAO: " + e);
@@ -30,7 +29,7 @@ public class DetalleVentaDAO implements IDetalleVentaDAO{
         return isCreated;
     }
 
-    public DetalleVentaDTO read(int key, int key2) {
+    public DetalleVentaDTO read(Integer key, Integer key2) {
         DetalleVentaDTO ventaDTO = new DetalleVentaDTO();
         Connection connection = CONEXION.getConnection();
         try {
@@ -59,7 +58,7 @@ public class DetalleVentaDAO implements IDetalleVentaDAO{
         try {
             PreparedStatement ps = connection.prepareStatement(SQL_READ_ALL);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 DetalleVentaDTO ventaDTO = new DetalleVentaDTO();
                 ventaDTO.setId_producto(rs.getInt(1));
                 ventaDTO.setId_venta(rs.getInt(2));
@@ -75,7 +74,6 @@ public class DetalleVentaDAO implements IDetalleVentaDAO{
         }
         return list;
     }
-
 
     public boolean update(DetalleVentaDTO t) {
         boolean isUpdate = false;
@@ -96,8 +94,7 @@ public class DetalleVentaDAO implements IDetalleVentaDAO{
         return isUpdate;
     }
 
-
-    public boolean delete(int key, int key2) {
+    public boolean delete(Integer key, Integer key2) {
         boolean isDeleted = false;
         Connection connection = CONEXION.getConnection();
         try {

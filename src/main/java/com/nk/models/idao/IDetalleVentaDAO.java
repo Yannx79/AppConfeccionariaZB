@@ -2,10 +2,10 @@ package com.nk.models.idao;
 
 import com.nk.models.datasource.Conexion;
 
-public interface IDetalleVentaDAO{
+public interface IDetalleVentaDAO<T, K> extends IObjectDAO2<T, K> {
 
     public static final String SQL_CREATE = "INSERT INTO `detalle_venta` (`id_producto`,"
-            + "`id_venta`,`subtotal`,`cantidad`) VALUES (?,?,?,?)";
+            + "`id_venta`,`subtotal`,`cantidad`, `estado`) VALUES (?, ?, ?, ?, ?)";
     public static final String SQL_READ = "SELECT * FROM `detalle_venta` "
             + "WHERE `id_producto` = ? AND `id_venta` = ?";
     public static final String SQL_READ_ALL = "SELECT * FROM `detalle_venta`";

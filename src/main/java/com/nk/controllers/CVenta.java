@@ -104,8 +104,6 @@ public class CVenta implements ActionListener {
     public void LimpiarEntradas(VVenta vista) {
         vista.txtId_usuario.setText("");
         vista.txtId_cliente.setText("");
-        vista.txtTotal.setText("");
-        vista.txtImpuesto.setText("");
         vista.txtId_usuario.requestFocus();
     }
 
@@ -129,8 +127,6 @@ public class CVenta implements ActionListener {
     public void RegistrarVenta(VentaDTO dto, VentaBO bo) {
         dto.setId_usuario(Integer.parseInt(frame.txtId_usuario.getText()));
         dto.setId_cliente(Integer.parseInt(frame.txtId_cliente.getText()));
-        dto.setTotal(Double.parseDouble(frame.txtTotal.getText()));
-        dto.setImpuesto(Integer.parseInt(frame.txtImpuesto.getText()));
         dto.setEstado(1);
         venDAO = new VentaDAO();
         bo.setVentaDAO(venDAO);
@@ -146,8 +142,6 @@ public class CVenta implements ActionListener {
         dto = bo.buscar(opcion);
         frame.txtId_usuario.setText(String.valueOf(dto.getId_usuario()));
         frame.txtId_cliente.setText(String.valueOf(dto.getId_cliente()));
-        frame.txtTotal.setText(String.valueOf(dto.getTotal()));
-        frame.txtImpuesto.setText(String.valueOf(dto.getImpuesto()));
         return dto.getId_venta();
     }
 
@@ -173,8 +167,6 @@ public class CVenta implements ActionListener {
         dto.setId_venta(codVen);
         dto.setId_usuario(Integer.parseInt(frame.txtId_usuario.getText()));
         dto.setId_cliente(Integer.parseInt(frame.txtId_cliente.getText()));
-        dto.setTotal(Double.parseDouble(frame.txtTotal.getText()));
-        dto.setImpuesto(Integer.parseInt(frame.txtImpuesto.getText()));
         dto.setEstado(1);
         bo.actualizar(dto);
     }

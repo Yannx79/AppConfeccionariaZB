@@ -32,11 +32,12 @@ public class VMenu extends javax.swing.JFrame {
         miLogout = new javax.swing.JMenuItem();
         miLogin = new javax.swing.JMenuItem();
         jmOperaciones = new javax.swing.JMenu();
-        jmiMovimientosInternos = new javax.swing.JMenuItem();
-        jmiAbastecer = new javax.swing.JMenuItem();
-        jmiVenta = new javax.swing.JMenuItem();
-        jmiCliente = new javax.swing.JMenuItem();
         jmiProveedor = new javax.swing.JMenuItem();
+        jmiAbastecer = new javax.swing.JMenuItem();
+        jmiCliente = new javax.swing.JMenuItem();
+        jmiMovimientosInternos = new javax.swing.JMenuItem();
+        jmiVenta = new javax.swing.JMenuItem();
+        jmiDetalleVenta = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +64,15 @@ public class VMenu extends javax.swing.JFrame {
 
         jmOperaciones.setText("Operaciones");
 
+        jmiProveedor.setText("Proveedor");
+        jmOperaciones.add(jmiProveedor);
+
+        jmiAbastecer.setText("Abastecer");
+        jmOperaciones.add(jmiAbastecer);
+
+        jmiCliente.setText("Cliente");
+        jmOperaciones.add(jmiCliente);
+
         jmiMovimientosInternos.setText("Movimientos Internos");
         jmiMovimientosInternos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,17 +81,11 @@ public class VMenu extends javax.swing.JFrame {
         });
         jmOperaciones.add(jmiMovimientosInternos);
 
-        jmiAbastecer.setText("Abastecer");
-        jmOperaciones.add(jmiAbastecer);
-
         jmiVenta.setText("Venta");
         jmOperaciones.add(jmiVenta);
 
-        jmiCliente.setText("Cliente");
-        jmOperaciones.add(jmiCliente);
-
-        jmiProveedor.setText("Proveedor");
-        jmOperaciones.add(jmiProveedor);
+        jmiDetalleVenta.setText("DetalleVenta");
+        jmOperaciones.add(jmiDetalleVenta);
 
         jMenuBar1.add(jmOperaciones);
 
@@ -150,6 +154,7 @@ public class VMenu extends javax.swing.JFrame {
     public javax.swing.JMenu jmOperaciones;
     public javax.swing.JMenuItem jmiAbastecer;
     public javax.swing.JMenuItem jmiCliente;
+    public javax.swing.JMenuItem jmiDetalleVenta;
     public javax.swing.JMenuItem jmiMovimientosInternos;
     public javax.swing.JMenuItem jmiProveedor;
     public javax.swing.JMenuItem jmiVenta;

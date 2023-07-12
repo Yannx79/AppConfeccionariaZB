@@ -4,16 +4,15 @@ import com.nk.models.dao.DetalleVentaDAO;
 import com.nk.models.dto.DetalleVentaDTO;
 import java.util.List;
 
-
-public class DetalleVentaBO{
+public class DetalleVentaBO implements IBusinessObject2<DetalleVentaDTO, Integer> {
 
     private DetalleVentaDAO detalleventaDAO;
-    
+
     public boolean registrar(DetalleVentaDTO t) {
         return detalleventaDAO.create(t);
     }
 
-    public DetalleVentaDTO buscar(int key,int key2) {
+    public DetalleVentaDTO buscar(Integer key, Integer key2) {
         return detalleventaDAO.read(key, key2);
     }
 
@@ -25,14 +24,12 @@ public class DetalleVentaBO{
         return detalleventaDAO.update(t);
     }
 
-    public boolean eliminar(int key,int key2) {
+    public boolean eliminar(Integer key, Integer key2) {
         return detalleventaDAO.delete(key, key2);
     }
 
-    public void setDetalleventaDAO(DetalleVentaDAO detalleventaDAO) {
+    public void setDetalleVentaDAO(DetalleVentaDAO detalleventaDAO) {
         this.detalleventaDAO = detalleventaDAO;
-    }   
-    
-
+    }
 
 }
