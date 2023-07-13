@@ -155,7 +155,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnRegistrar.setBackground(new java.awt.Color(54, 57, 63));
         btnRegistrar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Registrar.png")); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.setBorder(null);
         btnRegistrar.setContentAreaFilled(false);
@@ -170,7 +169,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnActualizar.setBackground(new java.awt.Color(54, 57, 63));
         btnActualizar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Actualizar.png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.setBorder(null);
         btnActualizar.setContentAreaFilled(false);
@@ -185,7 +183,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnEliminar.setBackground(new java.awt.Color(54, 57, 63));
         btnEliminar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\tacho.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
         btnEliminar.setContentAreaFilled(false);
@@ -200,7 +197,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnListar.setBackground(new java.awt.Color(54, 57, 63));
         btnListar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
-        btnListar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\listar.png")); // NOI18N
         btnListar.setText("Listar");
         btnListar.setBorder(null);
         btnListar.setContentAreaFilled(false);
@@ -215,7 +211,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         btnConsultar.setBackground(new java.awt.Color(54, 57, 63));
         btnConsultar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\Consultar.png")); // NOI18N
         btnConsultar.setText("Consultar");
         btnConsultar.setBorder(null);
         btnConsultar.setContentAreaFilled(false);
@@ -238,7 +233,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         lblIconoVenta.setBackground(new java.awt.Color(88, 101, 242));
         lblIconoVenta.setForeground(new java.awt.Color(255, 255, 255));
         lblIconoVenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconoVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\estante.png")); // NOI18N
         jPanel3.add(lblIconoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 80));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 100));
@@ -283,7 +277,6 @@ public class VVenta extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 740, 100));
 
         btnDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnDes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\CODIGO\\AppConfeccionariaZB\\src\\main\\java\\com\\nk\\img\\descargar.png")); // NOI18N
         btnDes.setText("Descargar");
         btnDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
