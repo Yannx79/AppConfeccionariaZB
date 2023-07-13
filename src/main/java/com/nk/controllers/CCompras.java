@@ -22,6 +22,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class CCompras implements ActionListener {
 
@@ -43,19 +44,27 @@ public class CCompras implements ActionListener {
     CompraDTO compraDTO;
 
     // list
-    List<DetalleCompraDTO> listDetalleCompra;
+    List<DetalleCompraDTO> listDetalleCompra = new LinkedList<>();
 
     VCompras view;
+    
+    //variable auxiliar
+    int idCom;
+    double acuPrecio;
 
     public CCompras(VCompras view) {
         this.view = view;
         this.builder();
+        idCom = UltimoID();
+        this.view.btnAgregar.setEnabled(false);
+        this.view.btnComprar.setEnabled(false);
     }
 
     public void builder() {
         this.getInstance();
         this.addAllListeners();
         this.display();
+        
     }
 
     public void getInstance() {
@@ -79,7 +88,7 @@ public class CCompras implements ActionListener {
 
         compraDTO = new CompraDTO();
 
-        listDetalleCompra = new LinkedList<>();
+        //listDetalleCompra = new LinkedList<>();
     }
 
     public void addAllListeners() {
@@ -104,9 +113,10 @@ public class CCompras implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.btnAgregar) {
-            this.actionPerformedAgregar();
+            //this.actionPerformedAgregar();
+            this.Agregar();
         } else if (e.getSource() == view.btnComprar) {
-            this.actionPerformedComprar();
+            //this.actionPerformedComprar();
         } else if (e.getSource() == view.btnRegistrar) {
             this.actionPerformedRegistrar();
         } else if (e.getSource() == view.btnVerCompras) {
@@ -142,10 +152,11 @@ public class CCompras implements ActionListener {
 //        view.txt_IdUsuario.setEnabled(false);
 //        view.txt_IdProveedor.setEnabled(false);
         cleanInputs(1);
+        this.view.btnAgregar.setEnabled(true);
         Mensaje.mostrar("Se registros los datos del Proveedor y Usuario Exitosamente");
     }
 
-    private void actionPerformedComprar() {
+   /* private void actionPerformedComprar() {
         compraBO.registrar(compraDTO);
         listDetalleCompra.stream().map(x -> detalleCompraBO.registrar(x));
         
@@ -173,23 +184,62 @@ public class CCompras implements ActionListener {
         
         listDetalleCompra.add(detalleCompraDTO);
         cleanInputs(2);
+    }*/
+    
+    private void Agregar(){
+        DetalleCompraDTO detcom = new DetalleCompraDTO();
+        detcom.setId_compra(idCom);
+        detcom.setId_insumo(Integer.parseInt(view.txt_IdInsumo.getText()));
+        detcom.setCantidad(Integer.parseInt(view.txtCantidad.getText()));
+        detcom.setSubtotal((Double.parseDouble(view.txtPrecio.getText()))*
+                (Integer.parseInt(view.txtCantidad.getText())));
+        detcom.setEstado(1);
+        listDetalleCompra.add(detcom);
+        acuPrecio+=(Double.parseDouble(view.txtPrecio.getText())*
+                Integer.parseInt(view.txtCantidad.getText()));
+        cleanInputs(2);
+        int opc = JOptionPane.showConfirmDialog(null,"¿Desea registrar otro pedido?",
+                                                    "Pedido",JOptionPane.YES_NO_OPTION);
+            switch(opc){
+                case 0: cleanInputs(2);break;
+                case 1: this.view.btnAgregar.setEnabled(false);
+                        this.view.btnComprar.setEnabled(true);
+                        cleanInputs(2);break;
+            }
     }
-
+    
+    private void Comprar(){
+        
+    }
+    
+    
     private void cleanInputs(int option) {
         switch (option) {
             case 1: {
                 view.txt_IdUsuario.setText("");
                 view.txt_IdProveedor.setText("");
+                view.txt_IdInsumo.requestFocus();
             }
             case 2: {
                 view.txt_IdInsumo.setText("");
                 view.txtCantidad.setText("");
                 view.txtPrecio.setText("");
+                view.txt_IdInsumo.requestFocus();
             }
             default: {
 
             }
         }
+    }
+    
+    public int UltimoID(){
+        int id;
+        if (compraBO.listar().size() != 0) {
+            id =((LinkedList<CompraDTO>) compraBO.listar()).getLast().getId_compra() + 1;
+        } else {
+            return 1;
+        }
+        return id;
     }
 
 }
