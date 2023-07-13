@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.3.0-dev+20221117.561d9ca705
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2023 a las 05:25:55
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 14-07-2023 a las 00:57:17
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `cargo` (
   `id_cargo` int(11) NOT NULL,
   `descripcion` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`id_cargo`, `descripcion`) VALUES
+(1, 'Usuario'),
+(2, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -49,7 +57,7 @@ CREATE TABLE `cliente` (
   `f_actualizacion` date DEFAULT NULL,
   `f_eliminacion` date DEFAULT NULL,
   `estado` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
@@ -81,7 +89,7 @@ CREATE TABLE `compra` (
   `fecha` datetime DEFAULT current_timestamp(),
   `impuesto` double NOT NULL CHECK (`impuesto` >= 0),
   `estado` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,7 +103,7 @@ CREATE TABLE `detalle_compra` (
   `subtotal` double DEFAULT NULL CHECK (`subtotal` >= 0),
   `cantidad` int(11) DEFAULT NULL CHECK (`cantidad` >= 0),
   `estado` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -108,7 +116,7 @@ CREATE TABLE `detalle_venta` (
   `id_venta` int(11) NOT NULL,
   `subtotal` double DEFAULT NULL CHECK (`subtotal` >= 0),
   `cantidad` int(11) DEFAULT NULL CHECK (`cantidad` >= 0)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -127,7 +135,7 @@ CREATE TABLE `insumo` (
   `f_actualizacion` date DEFAULT NULL,
   `f_eliminacion` date DEFAULT NULL,
   `descuento` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `insumo`
@@ -162,7 +170,7 @@ CREATE TABLE `producto` (
   `f_actualizacion` date DEFAULT NULL,
   `f_eliminacion` date DEFAULT NULL,
   `descuento` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -198,7 +206,7 @@ CREATE TABLE `proveedor` (
   `f_actualizacion` date DEFAULT NULL,
   `f_eliminacion` date DEFAULT NULL,
   `estado` int(11) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `proveedor`
@@ -228,9 +236,17 @@ CREATE TABLE `usuario` (
   `ap_paterno` varchar(20) DEFAULT NULL,
   `ap_materno` varchar(20) DEFAULT NULL,
   `usuario` varchar(20) DEFAULT NULL,
-  `pass` varchar(20) DEFAULT NULL,
+  `pass` varchar(200) DEFAULT NULL,
   `id_cargo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombres`, `ap_paterno`, `ap_materno`, `usuario`, `pass`, `id_cargo`) VALUES
+(7, NULL, NULL, NULL, 'root@gmail.com', '63a9f0ea7bb98050796b649e85481845', 2),
+(8, NULL, NULL, NULL, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 2);
 
 -- --------------------------------------------------------
 
@@ -245,7 +261,7 @@ CREATE TABLE `venta` (
   `total` double DEFAULT NULL CHECK (`total` >= 0),
   `fecha` datetime DEFAULT current_timestamp(),
   `impuesto` double NOT NULL CHECK (`impuesto` >= 0)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
@@ -326,7 +342,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -362,7 +378,7 @@ ALTER TABLE `proveedor`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
