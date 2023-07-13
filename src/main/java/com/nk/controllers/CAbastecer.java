@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class CAbastecer implements ActionListener{
+public class CAbastecer implements ActionListener {
+
     //frame
     VAbastecer frame;
     //Clase de tabla
@@ -24,9 +25,9 @@ public class CAbastecer implements ActionListener{
     DefaultTableModel modelo = null;
     //variable auxiliar
     int codInsumo;
-    
+
     //Constuctor de controlador
-    public CAbastecer (VAbastecer vista){
+    public CAbastecer(VAbastecer vista) {
         frame = vista;
         AgregarBotones(frame);
         frame.btnActualizar.setEnabled(false);
@@ -34,100 +35,104 @@ public class CAbastecer implements ActionListener{
         modelo = PonerCabeceras(frame.tblListaInsumos);
         insBO = new InsumoBO();
         frame.setVisible(true);
+
+        // listado automatico
+        insDTO = new InsumoDTO();
+        Listar(insDTO, insBO);
     }
-    
+
     //Función de botones
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == frame.btnRegistrar){
+        if (e.getSource() == frame.btnRegistrar) {
             insDTO = new InsumoDTO();
-            RegistrarInsumo(insDTO,insBO);
+            RegistrarInsumo(insDTO, insBO);
             LimpiarEntradas(frame);
-            if(frame.tblListaInsumos.getRowCount() != 0){
-                Listar(insDTO,insBO);
+            if (frame.tblListaInsumos.getRowCount() != 0) {
+                Listar(insDTO, insBO);
             }
         }
-        if(e.getSource() == frame.btnConsultar){
+        if (e.getSource() == frame.btnConsultar) {
             insDTO = new InsumoDTO();
-            codInsumo = ConsultarInsumo(insDTO,insBO);
+            codInsumo = ConsultarInsumo(insDTO, insBO);
             ActivarUPDEL(frame);
         }
-        if(e.getSource() == frame.btnListar){
+        if (e.getSource() == frame.btnListar) {
             insDTO = new InsumoDTO();
-            Listar(insDTO,insBO);
+            Listar(insDTO, insBO);
         }
-        if(e.getSource() == frame.btnActualizar){
+        if (e.getSource() == frame.btnActualizar) {
             insDTO = new InsumoDTO();
-            Actualizar(insDTO,insBO,codInsumo);
-            if(frame.tblListaInsumos.getRowCount() != 0){
-                Listar(insDTO,insBO);
+            Actualizar(insDTO, insBO, codInsumo);
+            if (frame.tblListaInsumos.getRowCount() != 0) {
+                Listar(insDTO, insBO);
             }
             DesactivarUPDEL(frame);
             LimpiarEntradas(frame);
-            codInsumo =0;
+            codInsumo = 0;
         }
-        if(e.getSource() == frame.btnEliminar){
+        if (e.getSource() == frame.btnEliminar) {
             insDTO = new InsumoDTO();
-            Eliminar(insDTO,insBO,codInsumo);
-            if(frame.tblListaInsumos.getRowCount() != 0){
-                Listar(insDTO,insBO);
+            Eliminar(insDTO, insBO, codInsumo);
+            if (frame.tblListaInsumos.getRowCount() != 0) {
+                Listar(insDTO, insBO);
             }
             DesactivarUPDEL(frame);
             LimpiarEntradas(frame);
-            codInsumo =0;
+            codInsumo = 0;
         }
-        
+
     }
-    
+
     //Métodos auxiliares
-    public void AgregarBotones(VAbastecer vista){
+    public void AgregarBotones(VAbastecer vista) {
         frame.btnActualizar.addActionListener(this);
         frame.btnConsultar.addActionListener(this);
         frame.btnEliminar.addActionListener(this);
         frame.btnListar.addActionListener(this);
         frame.btnRegistrar.addActionListener(this);
     }
-    
-    public DefaultTableModel PonerCabeceras(JTable tabla){
-        String[] titulos={"Id Insumo","Nombre","Descripción","Precio",
-                        "Stock","Estado","F. Inserción","F. Actualización",
-                        "F. Eliminación","Descuento"};
-        DefaultTableModel modelo= new DefaultTableModel(null,titulos);
+
+    public DefaultTableModel PonerCabeceras(JTable tabla) {
+        String[] titulos = {"Id Insumo", "Nombre", "Descripción", "Precio",
+            "Stock", "Estado", "F. Inserción", "F. Actualización",
+            "F. Eliminación", "Descuento"};
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
         tabla.setModel(modelo);
         return modelo;
     }
-    
-    public void Mensaje (String m){
+
+    public void Mensaje(String m) {
         JOptionPane.showMessageDialog(null, m);
     }
-    
-    public void LimpiarEntradas(VAbastecer vista){
+
+    public void LimpiarEntradas(VAbastecer vista) {
         vista.txtNombre.setText("");
         vista.txtDescripcion.setText("");
         vista.txtDescuento.setText("");
         vista.txtPrecio.setText("");
         vista.txtStock.setText("");
-        vista.txtNombre.requestFocus();       
+        vista.txtNombre.requestFocus();
     }
-    
-    public void ActivarUPDEL(VAbastecer vista){
+
+    public void ActivarUPDEL(VAbastecer vista) {
         vista.btnRegistrar.setEnabled(false);
         vista.btnActualizar.setEnabled(true);
         vista.btnEliminar.setEnabled(true);
         vista.btnConsultar.setEnabled(false);
         vista.btnListar.setEnabled(false);
     }
-    
-    public void DesactivarUPDEL(VAbastecer vista){
+
+    public void DesactivarUPDEL(VAbastecer vista) {
         vista.btnRegistrar.setEnabled(true);
         vista.btnActualizar.setEnabled(false);
         vista.btnEliminar.setEnabled(false);
         vista.btnConsultar.setEnabled(true);
         vista.btnListar.setEnabled(true);
     }
-    
+
     //Métodos de botones
-    public void RegistrarInsumo(InsumoDTO dto, InsumoBO bo){
+    public void RegistrarInsumo(InsumoDTO dto, InsumoBO bo) {
         dto.setNombre(frame.txtNombre.getText());
         dto.setDescripcion(frame.txtDescripcion.getText());
         dto.setPrecio(Double.parseDouble(frame.txtPrecio.getText()));
@@ -136,11 +141,11 @@ public class CAbastecer implements ActionListener{
         dto.setDescuento(Double.parseDouble(frame.txtDescuento.getText()));
         insDAO = new InsumoDAO();
         bo.setInsumoDAO(insDAO);
-        bo.registrar(insDTO);  
+        bo.registrar(insDTO);
         Mensaje("Insumo registrado");
     }
-    
-    public int ConsultarInsumo(InsumoDTO dto,InsumoBO bo){
+
+    public int ConsultarInsumo(InsumoDTO dto, InsumoBO bo) {
         int opcion;
         opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del insumo que quiera revisar:"));
         insDAO = new InsumoDAO();
@@ -153,25 +158,25 @@ public class CAbastecer implements ActionListener{
         frame.txtDescuento.setText(String.valueOf(dto.getDescuento()));
         return dto.getIdInsumo();
     }
-    
-    public void Listar(InsumoDTO dto, InsumoBO bo){
-        if(frame.tblListaInsumos.getRowCount() != 0){
-        for(int i=frame.tblListaInsumos.getRowCount()-1;i>=0;i--){
-            modelo.removeRow(i);
+
+    public void Listar(InsumoDTO dto, InsumoBO bo) {
+        if (frame.tblListaInsumos.getRowCount() != 0) {
+            for (int i = frame.tblListaInsumos.getRowCount() - 1; i >= 0; i--) {
+                modelo.removeRow(i);
             }
         }
         insDAO = new InsumoDAO();
         bo.setInsumoDAO(insDAO);
         L_insumos = bo.listar();
-        for(int i=0;i<L_insumos.size();i++){
-            if(L_insumos.get(i).getEstado()== 1){
-               modelo.addRow(L_insumos.get(i).Registro());
+        for (int i = 0; i < L_insumos.size(); i++) {
+            if (L_insumos.get(i).getEstado() == 1) {
+                modelo.addRow(L_insumos.get(i).Registro());
             }
-        } 
+        }
     }
-    
-    public void Actualizar(InsumoDTO dto, InsumoBO bo,int codIns){
-        insDAO = new InsumoDAO(); 
+
+    public void Actualizar(InsumoDTO dto, InsumoBO bo, int codIns) {
+        insDAO = new InsumoDAO();
         bo.setInsumoDAO(insDAO);
         dto.setIdInsumo(codIns);
         dto.setNombre(frame.txtNombre.getText());
@@ -179,15 +184,14 @@ public class CAbastecer implements ActionListener{
         dto.setPrecio(Double.parseDouble(frame.txtPrecio.getText()));
         dto.setStock(Integer.parseInt(frame.txtStock.getText()));
         dto.setEstado(1);
-        dto.setDescuento(Double.parseDouble(frame.txtDescuento.getText()));       
-        bo.actualizar(dto);        
+        dto.setDescuento(Double.parseDouble(frame.txtDescuento.getText()));
+        bo.actualizar(dto);
     }
-    
-   public void Eliminar(InsumoDTO dto, InsumoBO bo, int codIns){
-       insDAO = new InsumoDAO();
-       bo.setInsumoDAO(insDAO);
-       bo.eliminar(codIns);       
-   }
-    
+
+    public void Eliminar(InsumoDTO dto, InsumoBO bo, int codIns) {
+        insDAO = new InsumoDAO();
+        bo.setInsumoDAO(insDAO);
+        bo.eliminar(codIns);
+    }
 
 }
