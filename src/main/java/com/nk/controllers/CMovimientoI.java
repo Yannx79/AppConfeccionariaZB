@@ -35,6 +35,10 @@ public class CMovimientoI implements ActionListener {
         modelo = PonerCabeceras(frame.tblListaProductos);
         proBO = new ProductoBO();
         frame.setVisible(true);
+
+        // listar automatico
+        proDTO = new ProductoDTO();
+        Listar(proDTO, proBO);
     }
 
     //Función de botones
