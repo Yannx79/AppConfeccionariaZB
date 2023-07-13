@@ -117,6 +117,7 @@ public class CCompras implements ActionListener {
             this.Agregar();
         } else if (e.getSource() == view.btnComprar) {
             //this.actionPerformedComprar();
+            this.Comprar();
         } else if (e.getSource() == view.btnRegistrar) {
             this.actionPerformedRegistrar();
         } else if (e.getSource() == view.btnVerCompras) {
@@ -219,6 +220,7 @@ public class CCompras implements ActionListener {
         this.view.btnRegistrar.setEnabled(true);
         this.view.btnAgregar.setEnabled(true);
         this.view.btnComprar.setEnabled(false);
+        Mensaje.mostrar("Se registro existosamente la compra");
     }
     
     
