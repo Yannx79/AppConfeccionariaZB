@@ -226,7 +226,7 @@ public class VCompras extends javax.swing.JInternalFrame {
 
         lblTítuloFichaCompra.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
         lblTítuloFichaCompra.setForeground(new java.awt.Color(255, 255, 255));
-        lblTítuloFichaCompra.setText("COMPRA DE VENTA");
+        lblTítuloFichaCompra.setText("COMPRA DE INSUMO");
         jPanel1.add(lblTítuloFichaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, -1, 90));
 
         jLabel2.setToolTipText("");
