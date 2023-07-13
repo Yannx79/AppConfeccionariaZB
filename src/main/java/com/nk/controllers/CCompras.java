@@ -209,7 +209,16 @@ public class CCompras implements ActionListener {
     }
     
     private void Comprar(){
-        
+        compraDTO.setTotal(acuPrecio);
+        compraBO.registrar(compraDTO);
+        for(int i=0;i<listDetalleCompra.size();i++){
+            detalleCompraBO.registrar(listDetalleCompra.get(i));
+        }
+        acuPrecio=0;
+        listDetalleCompra.clear();
+        this.view.btnRegistrar.setEnabled(true);
+        this.view.btnAgregar.setEnabled(true);
+        this.view.btnComprar.setEnabled(false);
     }
     
     

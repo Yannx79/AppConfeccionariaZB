@@ -5,8 +5,7 @@ import com.nk.models.datasource.Conexion;
 public interface ICompraDAO<T, K> extends IObjectDAO<T, K> {
 
     public static final String SQL_CREATE = "INSERT INTO `compra`(`id_proveedor`, "
-            + "`id_usuario`,`total`,`fecha`,`impuesto`,`estado`) VALUES "
-            + "(?, ?, ?, ?, ?, ?)";
+            + "`id_usuario`,`total`,`impuesto`) VALUES (?, ?, ?, 0.18)";
     public static final String SQL_READ = "SELECT `id_compra`,`id_proveedor`,"
             + "`id_usuario`,`total`,DATE_FORMAT(`fecha`, '%d/%m/%Y') as `fecha`,"
             + "`impuesto`,`estado` FROM `compra` WHERE `id_compra` = ?";

@@ -18,9 +18,6 @@ public class CompraDAO implements ICompraDAO<CompraDTO, Integer> {
             ps.setInt(1, t.getId_proveedor());
             ps.setInt(2, t.getId_usuario());
             ps.setDouble(3, t.getTotal());
-            ps.setString(4, t.getFecha());
-            ps.setDouble(5, t.getImpuesto());
-            ps.setInt(6, t.getEstado());
             isCreated = (ps.executeUpdate() == 1) ? !isCreated : isCreated;
         } catch (Exception e) {
             System.out.println("Error CompraDAO: " + e);
