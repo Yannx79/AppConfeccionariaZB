@@ -11,6 +11,18 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
 
 [4. Roles](#4-roles)
 
+[5. Arquitectura](#5-arquitectura)
+
+[6. Estructura del Proyecto](#6-estructura-del-proyecto)
+
+[7. Funcionalidades Principales](#7-funcionalidades-principales)
+
+[8. Tecnologías Utilizadas](#8-tecnologías-utilizadas)
+
+[9. Base de Datos](#9-base-de-datos)
+
+[10. Requisitos](#10-requisitos)
+
 ## 1. Desarrolladores
 
 - [Funes Chavez, Yannick Yasuhiro](https://github.com/Yannx79)
@@ -85,3 +97,86 @@ Es una propuesta de mejora para el proyecto de Ingeniería de Software de V cicl
     - [Piscoche Olivarez, Edgar Nino](https://github.com/EDGARNPO)
 
     - [Zeta Bran, Gerson Steven](https://github.com/GersonZeta)
+
+## 5. Arquitectura
+
+El sistema está estructurado en base a una **arquitectura MVC (Modelo-Vista-Controlador)** y capas DAO/BO para una separación clara de responsabilidades.
+
+- **Modelo (models)**: Lógica de negocio (BO) y acceso a datos (DAO/IDAO).
+- **Vista (views)**: Interfaces gráficas de usuario (Swing + AbsoluteLayout).
+- **Controlador (controllers)**: Enlace entre vista y modelo.
+- **Recursos (img, doc)**: Imágenes y documentación del sistema.
+
+
+## 6. Estructura del Proyecto
+
+```text
+AppConfeccionariaZB/
+│
+├── lib/                          # Librerías externas (ej. AbsoluteLayout)
+│
+├── src/
+│   ├── db/                       # Script SQL de la base de datos
+│   ├── doc/                      # Capturas de pantalla de las interfaces
+│   ├── main/
+│   │   └── java/
+│   │       └── com/nk/
+│   │           ├── app/         # Clase principal App.java
+│   │           ├── controllers/ # Controladores de cada vista
+│   │           ├── img/         # Imágenes para la GUI
+│   │           └── models/      
+│   │               ├── bo/      # Objetos de negocio
+│   │               ├── dao/     # Acceso a datos
+│   │               ├── dto/     # Objetos de transferencia de datos
+│   │               ├── datasource/ # Configuraciones de conexión
+│   │               ├── idao/    # Interfaces de acceso a datos
+│   │               └── utilities/ # Utilidades generales
+│
+├── pom.xml                      # Configuración del proyecto Maven
+├── README.md                    # Documentación del proyecto
+└── nbactions.xml                # Configuración de NetBeans
+```
+
+## 7. Funcionalidades Principales
+
+- 🔐 Login de usuarios  
+- 👥 Módulo de clientes (Registrar, consultar y actualizar clientes)  
+- 🏢 Módulo de proveedores  
+- 📦 Gestión de productos e insumos (inventario, entradas y salidas)  
+- 🛒 Compras y abastecimiento  
+- 💰 Ventas y detalle de ventas  
+- 🔄 Movimientos internos entre almacenes  
+- 🧭 Menú principal con navegación sencilla entre módulos  
+
+## 8. Tecnologías Utilizadas
+
+- **Lenguaje:** Java 8+  
+- **IDE:** NetBeans  
+- **Framework GUI:** Swing (con AbsoluteLayout)  
+- **Conexión a BD:** JDBC  
+- **Base de datos:** MySQL  
+- **Gestión de proyecto:** Maven  
+- **Estilo arquitectónico:** MVC + DAO + BO  
+
+## 9. Recursos Visuales
+
+El sistema incluye vistas gráficas para facilitar su uso. Algunas capturas incluidas:
+
+- `Vista-Login.PNG`  
+- `Vista-Menu.PNG`  
+- `Vista-Clientes.PNG`  
+- `Vista-Proveedores.PNG`  
+- `Vista-Abastecimiento.PNG`  
+
+Las imágenes se encuentran en la carpeta `src/doc`.
+
+## 9. Base de Datos
+
+El archivo de base de datos `db_confeccionario.sql` ubicado en `src/db` contiene todas las instrucciones necesarias para crear la base de datos, sus tablas y relaciones.
+
+### 10. Requisitos
+
+- Servidor MySQL (puedes usar XAMPP, WAMP o MySQL Workbench)
+- Crear una base de datos llamada `confeccionario`
+- Ejecutar el script `db_confeccionario.sql`
+
